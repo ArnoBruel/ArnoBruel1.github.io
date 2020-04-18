@@ -1,3 +1,4 @@
-.vh-sp{
-  height:calc(100vh - 4rem);
+body{
+  text-align: justify;
+  position: relative;
 }
