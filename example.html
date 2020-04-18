@@ -84,10 +84,11 @@
           </tr>
         </tbody>
       </table>
-      <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
-        Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
-      </p>
     </div>
+    <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
+      Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
+    </p>
+
     <!-- Partie sur les containers-->
     <!-- J'ai rajouté la classe ml-2 pour une marge de 0.5rem à gauche, je l'ai également fait pour la plupart des éléments ci-dessous-->
     <h2 class="ml-2" id="Containers"> Containers</h2>
@@ -208,10 +209,10 @@
           </tr>
         </tbody>
       </table>
-      <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
-        Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
-      </p>
     </div>
+    <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
+      Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
+    </p>
     <h3>Equal-width</h3>
     <!-- Container contenant 3 colonnes de largeurs égales qqe soit la taille de l'appareil-->
     <!-- Le container permet de centrer et de faire un 'pad' horizontal du contenu de notre site-->
@@ -258,15 +259,66 @@
       Deuxième ligne : 2 colonnes, la première occupe 2/3 du container, la deuxième 1/3. <br />
       Troisième ligne : 3 colonnes sur toute la largeur, celle du milieu est deux fois plus grande que celles de part et d'autres.
     </p>
+    <!-- On peut créer des colonnes qui varient en taille selon leur contenu.-->
     <h3>Variable width content</h3>
-    <div class="container">
+    <div class="container my-3">
       <div class="row">
+        <div class="col-auto text-monospace">
+          .col-auto
+        </div>
         <div class="col-auto">
           Variable width content
         </div>
         <div class="col-auto">
           Other variable width content
         </div>
+      </div>
+      <p>On peut créer des colonnes qui varient en taille selon leur contenu.
+      </p>
+    </div>
+    <!-- On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en fonction du breakpoint.-->
+    <h3>Stacked to horizontal</h3>
+    <p>
+     On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en-dessous d'un certain breakpoint.
+    </p>
+    <div class="container">
+      <div class="row my-3 text-monospace text-primary">
+        <div class="col-sm-8">.col-sm-8</div>
+        <div class="col-sm-4">.col-sm-4</div>
+      </div>
+      <div class="row my-3 text-monospace text-secondary">
+        <div class="col-md">.col-md</div>
+        <div class="col-md">.col-md</div>
+        <div class="col-md">.col-md</div>
+      </div>
+      <div class="row my-3 text-monospace text-success">
+        <div class="col-lg">.col-lg</div>
+        <div class="col-lg-5">.col-lg-5</div>
+        <div class="col-lg">.col-lg</div>
+      </div>
+      <div class="row my-3 text-monospace text-danger">
+        <div class="col-xl-2">.col-xl-2</div>
+        <div class="col-xl">.col-xl</div>
+        <div class="col-xl-2">.col-xl-2</div>
+      </div>
+    </div>
+    <h3>Mix and match</h3>
+    <div class="container">
+      <p>On peut coupler les deux types de codes pour que les colonnes aient une certaine taille en-dessous d'un certain breakpoint, une certaine taille au-dessus d'un certain breakpoint etc.
+      </p>
+      <!-- Au-dessus du breakpoint md, les deux colonnes sont sur la même ligne, la première étant deux fois plus grande que la deuxième-->
+      <!-- En-dessous du breakpoint md, les deux colonnes sont l'une au-dessus de l'autre, la première sur toute la largeur, la deuxième sur la moitié-->
+      <div class="row my-3 text-monospace text-primary">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      </div>
+      <!-- Au-dessus du breakpoint md, les trois colonnes sont également réparties sur la largeur-->
+      <!-- En-dessous du breakpoint md, deux colonnes sont également réparties sur la largeur, et la troisième prend la moitié de la largeur sur une seconde ligne-->
+      <div class="row my-3 text-monospace text-secondary">
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      </div>
       </div>
     </div>
   </div>
