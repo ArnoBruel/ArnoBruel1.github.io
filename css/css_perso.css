@@ -2,3 +2,8 @@ body{
   text-align: justify;
   position: relative;
 }
+.row>[class^=col]{
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid rgba(86,61,124,.2);
+  text-align: center;
+}
