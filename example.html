@@ -15,9 +15,8 @@
 </head>
 <!-- Ces attributs sur le body permettent "d'espionner" le scrolling, et de notamment faire un joli effet sur la navbar-->
 <!-- Attention, ça ne marche que si le body est mis en "position: relative;" (voir css_perso), et que lorsque la navbar est ancrée en haut (sticky-top)-->
-<body data-spy="scroll" data-target="#navbar_up">
-
-<!-- Div entourant le menu (navbar_up)-->
+<body>
+  <!-- Div entourant le menu (navbar_up)-->
   <div id="Menu-wrapper" class="light-md sticky-top">
     <!-- Ici commence la navbar à proprement parler. le "navbar-expand-md" permet de contrôler à quel breakpoint la navbar est entièrement affichée ou remplacée par le bouton-->
     <nav class="navbar navbar-expand-md navbar-light bg-light" id="navbar_up">
@@ -34,19 +33,52 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- On commence à lister les onglets sous ce <ul> en faisant des <li>-->
         <ul class="navbar-nav mr-auto">
-        <!-- On rajoute la classe "dropdown" si on souhaite un menu déroulant lorsqu'on clique...-->
+          <!-- On rajoute la classe "dropdown" si on souhaite un menu déroulant lorsqu'on clique...-->
           <li class="nav-item dropdown">
             <!-- ...Et les classes ci-dessous pour afficher et faire marcher ce bouton (petite flèche vers le bas) correctement-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Layout
             </a>
             <!-- Ce qui s'affiche dans le menu déroulant est mis dans ce div avec la classe "dropdown-menu" et un label pour identifier quel menu déroulant à afficher-->
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+            <!-- Attribut dropright pour que la petite flèche s'affiche vers la droite au besoin-->
+            <div class="dropright dropdown-menu" aria-labelledby="navbarDropdown1">
               <!-- Les différents items dans ce menu ont pour classe "dropdown-item" dans des balises <a>-->
               <a class="dropdown-item" href="#Breakpoints">Breakpoints</a>
               <a class="dropdown-item" href="#Containers">Containers</a>
-              <a class="dropdown-item" href="#Grid_System">Grid System</a>
-              <a class="dropdown-item" href="#Alignment">Alignment</a>
+              <!-- Sous-menu Grid_System-->
+              <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown1_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Grid System
+              </a>
+              <!-- Attribut dropright pour que le menu s'affiche à droite au besoin-->
+              <div class="dropright dropdown-menu" aria-labelledby="navbarDropdown1_1">
+                <a class="dropdown-item" href="#Equal-width">Equal-width</a>
+                <a class="dropdown-item" href="#Multi-line">Multi-line &amp; column width</a>
+                <a class="dropdown-item" href="#Variable_width">Variable width</a>
+                <a class="dropdown-item" href="#Stacked">Stacked to horizontal</a>
+                <a class="dropdown-item" href="#Mix_match">Mix &amp; match</a>
+                <a class="dropdown-item" href="#Gutters">Gutters</a>
+              </div>
+              <!-- Sous-menu Alignment-->
+              <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown1_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Alignment
+              </a>
+              <div class="dropright dropdown-menu" aria-labelledby="navbarDropdown1_2">
+                <a class="dropdown-item" href="#Vertical_Alignment">Vertical Alignment</a>
+                <a class="dropdown-item" href="#Horizontal_Alignment">Horizontal Alignment</a>
+                <a class="dropdown-item" href="#Column_wrapping">Column wrapping</a>
+                <a class="dropdown-item" href="#Column_breaks">Column breaks</a>
+              </div>
+
+              <a class="dropdown-item" href="#Reordering">Reordering</a>
+              <!-- Sous-menu Offsetting_columns-->
+              <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown1_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Offsetting columns
+              </a>
+              <div class="dropright dropdown-menu" aria-labelledby="navbarDropdown1_3">
+                <a class="dropdown-item" href="#Offset_classes">Offset classes</a>
+                <a class="dropdown-item" href="#Margin_utilities">Margin utilities</a>
+                <a class="dropdown-item" href="#Nesting">Nesting</a>
+              </div>
               <!-- Si on souhaite une séparation physique entre deux items:
               <div class="dropdown-divider"></div> -->
             </div>
@@ -56,532 +88,672 @@
     </nav>
   </div>
   <main class="container-fluid">
+    <div class="container-fluid h1-container">
+      <h1 id="Layout">Layout</h1>
 
-    <h1 id="Layout">Layout</h1>
-
-    <!-- Descriptif des breakpoints, point crucial pour rendre le site "responsive" à différents appareils.-->
-    <h2 class="ml-2" id="Breakpoints">Breakpoints</h2>
-    <!-- Tableau explicitant les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.-->
-    <div class="container-fluid">
-      <div class="table-responsive">
-        <!-- "table-sm" = attribut pour compacter le padding pour les petits appareils-->
-        <table class="table table-sm text-left">
-          <thead class="thead-light">
-            <tr>
-              <th>Breakpoints' size
-              </th>
-              <th>
-                Extra small<br>
-                <span class="font-weight-normal">&lt;576px</span>
-              </th>
-              <th>
-                Small<br>
-                <span class="font-weight-normal">≥576px</span>
-              </th>
-              <th>
-                Medium<br>
-                <span class="font-weight-normal">≥768px</span>
-              </th>
-              <th>
-                Large<br>
-                <span class="font-weight-normal">≥992px</span>
-              </th>
-              <th>
-                Extra large<br>
-                <span class="font-weight-normal">≥1200px</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Type of screen</td>
-              <td>Portrait phones</td>
-              <td>Landscape phones</td>
-              <td>Tablets</td>
-              <td>Desktops</td>
-              <td>Large desktops</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="container-fluid h2-container">
+        <!-- Descriptif des breakpoints, point crucial pour rendre le site "responsive" à différents appareils.-->
+        <h2 class="ml-2" id="Breakpoints">Breakpoints</h2>
+        <!-- Tableau explicitant les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.-->
+        <div class="container-fluid">
+          <div class="table-responsive">
+            <!-- "table-sm" = attribut pour compacter le padding pour les petits appareils-->
+            <table class="table table-sm text-left">
+              <thead class="thead-light">
+                <tr>
+                  <th>Breakpoints' size
+                  </th>
+                  <th>
+                    Extra small<br>
+                    <span class="font-weight-normal">&lt;576px</span>
+                  </th>
+                  <th>
+                    Small<br>
+                    <span class="font-weight-normal">≥576px</span>
+                  </th>
+                  <th>
+                    Medium<br>
+                    <span class="font-weight-normal">≥768px</span>
+                  </th>
+                  <th>
+                    Large<br>
+                    <span class="font-weight-normal">≥992px</span>
+                  </th>
+                  <th>
+                    Extra large<br>
+                    <span class="font-weight-normal">≥1200px</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Type of screen</td>
+                  <td>Portrait phones</td>
+                  <td>Landscape phones</td>
+                  <td>Tablets</td>
+                  <td>Desktops</td>
+                  <td>Large desktops</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
+            Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
+          </p>
+        </div>
+        <!-- Fin du div h2-container-->
       </div>
-      <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
-        Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
-      </p>
-    </div>
 
-    <!-- Partie sur les containers-->
-    <!-- J'ai rajouté la classe ml-2 pour une marge de 0.5rem à gauche, je l'ai également fait pour la plupart des éléments ci-dessous-->
-    <h2 class="ml-2" id="Containers"> Containers</h2>
-    <!-- En plus de la classe m-2 (marge de 0.5rem de chaque côté), j'ai rajouté p-3 pour un padding de 1rem dans chaque direction-->
-    <!-- La classe bg-light permet de rendre le fond gris clair (voir chapitre sur les couleurs)-->
+      <div class="container-fluid h2-container">
+        <!-- Partie sur les containers-->
+        <!-- J'ai rajouté la classe ml-2 pour une marge de 0.5rem à gauche, je l'ai également fait pour la plupart des éléments ci-dessous-->
+        <h2 class="ml-2" id="Containers">Containers</h2>
+        <!-- En plus de la classe m-2 (marge de 0.5rem de chaque côté), j'ai rajouté p-3 pour un padding de 1rem dans chaque direction-->
+        <!-- La classe bg-light permet de rendre le fond gris clair (voir chapitre sur les couleurs)-->
+        <!--  Différents types de containers-->
+        <div class="container p-3 m-2 bg-light">
+          <!-- La balise small permet de mettre un texte en plus petit supplémentaire, généralement à un header-->
+          <!-- L'attribut "text-muted" permet d'afficher le texte en plus clair-->
+          <p>Simple Container <small class="text-muted">-- Max-width set for each responsive breakpoints</small>
+          </p>
+          <!-- Quant à "text-monospace", ça permet d'utiliser la police monospace de Bootstrap qui est assez cool et fait un peu "code"-->
+          <!-- La balise "code" existe aussi et fait un petit texte rose sympa mais que je n'ai pas eu envie d'utiliser-->
+          <p class="text-monospace">.container
+          </p>
+        </div>
 
-    <!--  Différents types de containers-->
-    <div class="container p-3 m-2 bg-light">
-      <!-- La balise small permet de mettre un texte en plus petit supplémentaire, généralement à un header-->
-      <!-- L'attribut "text-muted" permet d'afficher le texte en plus clair-->
-      <p>Simple Container <small class="text-muted">-- Max-width set for each responsive breakpoints</small>
-      </p>
-      <!-- Quant à "text-monospace", ça permet d'utiliser la police monospace de Bootstrap qui est assez cool et fait un peu "code"-->
-      <!-- La balise "code" existe aussi et fait un petit texte rose sympa mais que je n'ai pas eu envie d'utiliser-->
-      <p class="text-monospace">.container
-      </p>
-    </div>
+        <div class="container-fluid p-3 bg-light">
+          <p>Fluid Container <small class="text-muted">-- 100% width at each responive breakpoints</small>
+          </p>
+          <p class="text-monospace">.container-fluid
+          </p>
+        </div>
 
-    <div class="container-fluid p-3 bg-light">
-      <p>Fluid Container <small class="text-muted">-- 100% width at each responive breakpoints</small>
-      </p>
-      <p class="text-monospace">.container-fluid
-      </p>
-    </div>
+        <div class="container-sm p-3 m-2 bg-light">
+          <p>Container with small breakpoint <small class="text-muted">-- 100% wide until small breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-sm
+          </p>
+        </div>
 
-    <div class="container-sm p-3 m-2 bg-light">
-      <p>Container with small breakpoint <small class="text-muted">-- 100% wide until small breakpoint is reached</small>
-      </p>
-      <p class="text-monospace">.container-sm
-      </p>
-    </div>
+        <div class="container-md p-3 m-2 bg-light">
+          <p>Container with medium breakpoint <small class="text-muted">-- 100% wide until medium breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-md
+          </p>
+        </div>
 
-    <div class="container-md p-3 m-2 bg-light">
-      <p>Container with medium breakpoint <small class="text-muted">-- 100% wide until medium breakpoint is reached</small>
-      </p>
-      <p class="text-monospace">.container-md
-      </p>
-    </div>
+        <div class="container-lg p-3 m-2 bg-light">
+          <p>Container with large breakpoint <small class="text-muted">-- 100% wide until large breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-lg
+          </p>
+        </div>
 
-    <div class="container-lg p-3 m-2 bg-light">
-      <p>Container with large breakpoint <small class="text-muted">-- 100% wide until large breakpoint is reached</small>
-      </p>
-      <p class="text-monospace">.container-lg
-      </p>
-    </div>
-
-    <div class="container-xl p-3 m-2 bg-light">
-      <p>Container with extra large breakpoint <small class="text-muted">-- 100% wide until extra large breakpoint is reached</small>
-      </p>
-      <p class="text-monospace">.container-xl
-      </p>
-    </div>
-
-    <!-- Partie dédiée au système de grille !-->
-    <h2 class="ml-2" id="Grid_System">Grid system</h2>
-    <div class="container-fluid">
-      <div class="table-responsive">
-        <!-- Tableau récapitulant les propriétés du système de grille de Bootstrap-->
-        <table class="table table-sm table-bordered table-striped">
-          <thead>
-            <tr>
-              <th></th>
-              <th class="text-center">
-                Extra small<br>
-                <small>&lt;576px</small>
-              </th>
-              <th class="text-center">
-                Small<br>
-                <small>≥576px</small>
-              </th>
-              <th class="text-center">
-                Medium<br>
-                <small>≥768px</small>
-              </th>
-              <th class="text-center">
-                Large<br>
-                <small>≥992px</small>
-              </th>
-              <th class="text-center">
-                Extra large<br>
-                <small>≥1200px</small>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <!-- Le "text-nowrap" permet d'empêcher le retour automatique à la ligne-->
-              <th class="text-nowrap" scope="row">Max container width</th>
-              <!-- Taille maximale du container selon le breakpoint-->
-              <td>None (auto)</td>
-              <td>540px</td>
-              <td>720px</td>
-              <td>960px</td>
-              <td>1140px</td>
-            </tr>
-            <tr>
-              <th class="text-nowrap" scope="row">Class prefix</th>
-              <td><code>.col-</code></td>
-              <!-- Colonnes stackées jusqu'au small breakpoint-->
-              <td><code>.col-sm-</code></td>
-              <!-- Existe pour tous les autres types de breakpoints-->
-              <td><code>.col-md-</code></td>
-              <td><code>.col-lg-</code></td>
-              <td><code>.col-xl-</code></td>
-            </tr>
-            <tr>
-              <!-- Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté de l'écran-->
-              <th class="text-nowrap" scope="row"># of columns</th>
-              <td colspan="5">12</td>
-            </tr>
-            <tr>
-              <th class="text-nowrap" scope="row">Gutter width</th>
-              <td colspan="5">30px (15px on each side of a column)</td>
-            </tr>
-            <tr>
-              <th class="text-nowrap" scope="row">Nestable</th>
-              <td colspan="5">Yes</td>
-            </tr>
-            <tr>
-              <th class="text-nowrap" scope="row">Column ordering</th>
-              <td colspan="5">Yes</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="container-xl p-3 m-2 bg-light">
+          <p>Container with extra large breakpoint <small class="text-muted">-- 100% wide until extra large breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-xl
+          </p>
+        </div>
+        <!-- Fin du div h2-container-->
       </div>
-      <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
-        Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
-      </p>
+
+      <div class="container-fluid h2-container">
+        <!-- Partie dédiée au système de grille !-->
+        <h2 class="ml-2" id="Grid_System">Grid system</h2>
+        <div class="container-fluid">
+          <div class="table-responsive">
+            <!-- Tableau récapitulant les propriétés du système de grille de Bootstrap-->
+            <table class="table table-sm table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="text-center">
+                    Extra small<br>
+                    <small>&lt;576px</small>
+                  </th>
+                  <th class="text-center">
+                    Small<br>
+                    <small>≥576px</small>
+                  </th>
+                  <th class="text-center">
+                    Medium<br>
+                    <small>≥768px</small>
+                  </th>
+                  <th class="text-center">
+                    Large<br>
+                    <small>≥992px</small>
+                  </th>
+                  <th class="text-center">
+                    Extra large<br>
+                    <small>≥1200px</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- Le "text-nowrap" permet d'empêcher le retour automatique à la ligne-->
+                  <th class="text-nowrap" scope="row">Max container width</th>
+                  <!-- Taille maximale du container selon le breakpoint-->
+                  <td>None (auto)</td>
+                  <td>540px</td>
+                  <td>720px</td>
+                  <td>960px</td>
+                  <td>1140px</td>
+                </tr>
+                <tr>
+                  <th class="text-nowrap" scope="row">Class prefix</th>
+                  <td><code>.col-</code></td>
+                  <!-- Colonnes stackées jusqu'au small breakpoint-->
+                  <td><code>.col-sm-</code></td>
+                  <!-- Existe pour tous les autres types de breakpoints-->
+                  <td><code>.col-md-</code></td>
+                  <td><code>.col-lg-</code></td>
+                  <td><code>.col-xl-</code></td>
+                </tr>
+                <tr>
+                  <!-- Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté de l'écran-->
+                  <th class="text-nowrap" scope="row"># of columns</th>
+                  <td colspan="5">12</td>
+                </tr>
+                <tr>
+                  <th class="text-nowrap" scope="row">Gutter width</th>
+                  <td colspan="5">30px (15px on each side of a column)</td>
+                </tr>
+                <tr>
+                  <th class="text-nowrap" scope="row">Nestable</th>
+                  <td colspan="5">Yes</td>
+                </tr>
+                <tr>
+                  <th class="text-nowrap" scope="row">Column ordering</th>
+                  <td colspan="5">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
+            Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
+          </p>
+        </div>
+
+        <h3 id="Equal-width">Equal-width</h3>
+        <div class="container-fluid">
+          <!-- Container contenant 3 colonnes de largeurs égales qqe soit la taille de l'appareil-->
+          <!-- Le container permet de centrer et de faire un 'pad' horizontal du contenu de notre site-->
+          <div class="container my-2"> <!-- classe my-2 = marge en haut et en bas de 0.5rem-->
+            <!-- Ce div avec la classe "row" permet de 'wrapper' (entourer) les colonnes à l'intérieur pour que le texte à l'intérieur soit toujours visuellement aligné en bas à gauche-->
+            <div class="row">
+              <!-- La classe "col" de ce div permet de lui dire de se comporter comme une colonne. Si plusieurs divs de colonnes sont situés dans le même div "row", ils se répartiront en largeurs égales sur toute la largeur du container-->
+              <div class="col text-monospace">.col </div>
+              <div class="col">Trois d'affilée permet de faire 3 colonnes</div>
+              <div class="col">de largeurs égales sur toute la largeur du container.</div>
+            </div>
+          </div>
+          <p>Si on avait mis quatre div de classe "col" de suite, on aurait eu 4 colonnes de même largeur et ainsi de suite.
+          </p>
+        </div>
+
+        <h3 id="Multi-line">Multi-line &amp; column width</h3>
+        <div class="container-fluid">
+          <!-- Exemple d'un container avec deux lignes-->
+          <div class="container text-monospace my-3">
+            <!-- 4 colonnes de même largeur-->
+            <div class="row">
+              <div class="col">.col</div>
+              <div class="col">.col</div>
+              <div class="col">.col</div>
+              <div class="col">.col</div>
+            </div>
+            <!-- 2 colonnes, la 1ère occupe 2/3 du container, la deuxième 1/3-->
+            <div class="row">
+              <div class="col-8 bg-gray">.col-8</div>
+              <div class="col-4">.col-4</div>
+              <!-- Élément permettant de sauter une ligne dans le même div row-->
+              <div class="w-100"></div>
+              <!-- 3 colonnes sur toute la largeur, celle du milieu est deux fois plus grande que celles de part et d'autres-->
+              <div class="col-3">.col-3</div>
+              <div class="col-6">.col-6</div>
+              <div class="col-3">.col-3</div>
+            </div>
+          </div>
+          <p>Première ligne : 4 colonnes de même largeur occupant la totalité de la largeur du container<br />
+            Deuxième ligne : 2 colonnes, la première occupe 2/3 du container, la deuxième 1/3. <br />
+            Troisième ligne : 3 colonnes sur toute la largeur, celle du milieu est deux fois plus grande que celles de part et d'autres.
+          </p>
+        </div>
+
+        <!-- On peut créer des colonnes qui varient en taille selon leur contenu.-->
+        <h3 id="Variable_width">Variable width content</h3>
+        <div class="container-fluid">
+          <div class="container my-3">
+            <div class="row">
+              <div class="col-auto text-monospace">
+                .col-auto
+              </div>
+              <div class="col-auto">
+                Variable width content
+              </div>
+              <div class="col-auto">
+                Other variable width content
+              </div>
+            </div>
+          </div>
+          <p>On peut créer des colonnes qui varient en taille selon leur contenu.
+          </p>
+        </div>
+
+        <!-- On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en fonction du breakpoint.-->
+        <h3 id="Stacked">Stacked to horizontal</h3>
+        <div class="container-fluid">
+          <p>
+            On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en-dessous d'un certain breakpoint.
+          </p>
+          <div class="container">
+            <div class="row my-3 text-monospace text-primary">
+              <div class="col-sm-8">.col-sm-8</div>
+              <div class="col-sm-4">.col-sm-4</div>
+            </div>
+            <div class="row my-3 text-monospace text-secondary">
+              <div class="col-md">.col-md</div>
+              <div class="col-md">.col-md</div>
+              <div class="col-md">.col-md</div>
+            </div>
+            <div class="row my-3 text-monospace text-success">
+              <div class="col-lg">.col-lg</div>
+              <div class="col-lg-5">.col-lg-5</div>
+              <div class="col-lg">.col-lg</div>
+            </div>
+            <div class="row my-3 text-monospace text-danger">
+              <div class="col-xl-2">.col-xl-2</div>
+              <div class="col-xl">.col-xl</div>
+              <div class="col-xl-2">.col-xl-2</div>
+            </div>
+          </div>
+        </div>
+        <!-- On peut coupler les deux types de codes pour que les colonnes aient une certaine taille en-dessous d'un certain breakpoint, une certaine taille au-dessus d'un certain breakpoint etc.-->
+        <h3 id="Mix_match">Mix &amp; match</h3>
+        <div class="container-fluid">
+          <p>On peut coupler les deux types de codes pour que les colonnes aient une certaine taille en-dessous d'un certain breakpoint, une certaine taille au-dessus d'un certain breakpoint etc.
+          </p>
+          <div class="container">
+            <!-- Au-dessus du breakpoint md, les deux colonnes sont sur la même ligne, la première étant deux fois plus grande que la deuxième-->
+            <!-- En-dessous du breakpoint md, les deux colonnes sont l'une au-dessus de l'autre, la première sur toute la largeur, la deuxième sur la moitié-->
+            <div class="row my-3 text-monospace text-primary">
+              <div class="col-md-8">.col-md-8</div>
+              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+            </div>
+            <!-- Au-dessus du breakpoint md, les trois colonnes sont également réparties sur la largeur-->
+            <!-- En-dessous du breakpoint md, deux colonnes sont également réparties sur la largeur, et la troisième prend la moitié de la largeur sur une seconde ligne-->
+            <div class="row my-3 text-monospace text-secondary">
+              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partie pour expliquer les gutters-->
+        <h3 id="Gutters">Gutters</h3>
+        <div class="container-fluid">
+          <p>Each column has horizontal padding (called a gutter) for controlling the space between them. This padding is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.<br />
+            Columns have horizontal padding to create the gutters between individual columns, however, you can remove the margin from rows and padding from columns with <code>.no-gutters</code> on the <code>.row.</code>
+          </p>
+          <div class="row justify-content-center mb-3 no-gutters">
+            <div class="col-auto">This is what happens</div>
+            <div class="col-auto">when there is no gutters</div>
+          </div>
+          <p>Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the <code>.row</code> and matching padding utilities on the <code>.col</code>s. The <code>.container</code> or <code>.container-fluid</code> parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.<br />
+            Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the <code>.col</code> padding with <code>.px-lg-5</code>, counteracted that with <code>.mx-lg-n5</code> on the parent <code>.row</code> and then adjusted the <code>.container</code> wrapper with <code>.px-lg-5</code>.
+          </p>
+          <div class="container px-lg-5">
+            <div class="row mx-lg-n5">
+              <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
+              <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Configurer les divs row pour contrôler en amont le nombre de colonnes pour chaque ligne (selon le breakpoint ou non)-->
+        <h3 id="Row_columns">Row columns</h3>
+        <div class="container-fluid">
+          <p>Use the responsive <code>.row-cols-*</code> classes to quickly set the number of columns that best render your content and layout. Whereas normal <code>.col-*</code> classes apply to the individual columns (e.g., <code>.col-md-4</code>), the row columns classes are set on the parent <code>.row</code> as a shortcut.
+          </p>
+          <p>Use these row columns classes to quickly create basic grid layouts or to control your card layouts.
+          </p>
+          <!-- Exemple avec quatre colonnes réparties sur deux lignes-->
+          <div class="container">
+            <div class="row mt-2 mb-3 row-cols-2">
+              <div class="col">Here is</div>
+              <div class="col">what happens</div>
+              <div class="col">if you write</div>
+              <div class="col text-monospace">.row .row-cols-2</div>
+            </div>
+            <div class="row my-3 row-cols-1 row-cols-sm-2 row-cols-md-4">
+              <div class="col">Here is everything I wrote:</div>
+              <div class="col text-monospace">row-cols-1</div>
+              <div class="col text-monospace">row-cols-sm-2</div>
+              <div class="col text-monospace">row-cols-md-4</div>
+            </div>
+          </div>
+          <p><u>Example 1:</u> 2 columns by row.<br/>
+            <u>Example 2:</u> over md -> 4 columns in one row, between sm &amp; md -> 2 columns by row, below sm -> 1 column by row.
+          </p>
+        </div>
+        <!-- Fin du div h2-container-->
+      </div>
+
+      <div class="container-fluid h2-container">
+        <!-- Partie dédiée à l'alignement des colonnes-->
+        <h2 id="Alignment">Alignment</h2>
+
+        <h3 id="Vertical_Alignment">Vertical Alignment</h3>
+        <div class="container-fluid">
+          <!-- align-items-*-->
+          <div class="container my-3">
+            <!-- Aligne les colonnes verticallement en haut du contaner-->
+            <div class="row my-3 align-items-start">
+              <div class="col">
+                In div <code>row</code>
+              </div>
+              <div class="col text-monospace">
+                .align-items-start
+              </div>
+              <div class="col">
+                aligns the columns vertically at the top
+              </div>
+            </div>
+            <!-- Aligne les colonnes verticallement au centre du container-->
+            <div class="row my-3 align-items-center">
+              <div class="col">
+                In div <code>row</code>
+              </div>
+              <div class="col text-monospace">
+                .align-items-center
+              </div>
+              <div class="col">
+                aligns the columns vertically at the center
+              </div>
+            </div>
+            <!-- Aligne les colonnes verticallement en bas du container-->
+            <div class="row my-3 align-items-end">
+              <div class="col">
+                In div <code>row</code>
+              </div>
+              <div class="col text-monospace">
+                .align-items-end
+              </div>
+              <div class="col">
+                aligns the columns vertically at the bottom
+              </div>
+            </div>
+          </div>
+          <p><code>.align-items-*</code> aligns the whole row at the top, the center or the bottom of the container.
+          </p>
+          <!-- align-self-*-->
+          <div class="container my-3">
+            <div class="row text-monospace">
+              <div class="col align-self-start">
+                .align-self-start
+              </div>
+              <div class="col align-self-center">
+                .align-self-center
+              </div>
+              <div class="col align-self-end">
+                .align-self-end
+              </div>
+            </div>
+          </div>
+          <p><code>.align-self-*</code> aligns the current column at the top, the center or the bottom of the container.
+          </p>
+        </div>
+
+        <h3 id="Horizontal_Alignment">Horizontal Alignment</h3>
+        <div class="container-fluid">
+          <!-- justify-content-*-->
+          <div class="container my-3">
+            <!-- Aligne horizontalement les colonnes à gauche-->
+            <div class="row my-3 justify-content-start">
+              <div class="col-4">
+                In div <code>row</code>
+              </div>
+              <div class="col-4 text-monospace">
+                .justify-content-start
+              </div>
+            </div>
+            <!-- Aligne horizontalement les colonnes au centre-->
+            <div class="row my-3 justify-content-center">
+              <div class="col-4">
+                In div <code>row</code>
+              </div>
+              <div class="col-4 text-monospace">
+                .justify-content-center
+              </div>
+            </div>
+            <!-- Aligne horizontalement les colonnes à droite-->
+            <div class="row my-3 justify-content-end">
+              <div class="col-4">
+                In div <code>row</code>
+              </div>
+              <div class="col-4 text-monospace">
+                .justify-content-end
+              </div>
+            </div>
+            <!-- Aligne horizontalement les colonnes pour que l'espace entre le bord et chaque colonne fasse la même taille-->
+            <!-- Ici, blank:4/3  column1:4  blank:4/3 column2:4 blank:4/3 -->
+            <div class="row my-3 justify-content-around">
+              <div class="col-4">
+                In div <code>row</code>
+              </div>
+              <div class="col-4 text-monospace">
+                .justify-content-around
+              </div>
+            </div>
+            <!-- Aligne horizontalement les colonnes pour que l'espace entre chaque colonne fasse la même taille-->
+            <!-- Ici, column1:4 blank:4 column2:4 -->
+            <div class="row my-3 justify-content-between">
+              <div class="col-4">
+                In div <code>row</code>
+              </div>
+              <div class="col-4 text-monospace">
+                .justify-content-between
+              </div>
+            </div>
+          </div>
+          <p><strong>First row:</strong> columns align horizontally to the left.
+          </p>
+          <p><strong>Second row:</strong> columns align horizontally at the center.
+          </p>
+          <p><strong>Third row:</strong> columns align horizontally to the right.
+          </p>
+          <p><strong>Fouth row:</strong> equal space between border &amp; columns and column &amp; column.
+          </p>
+          <p><strong>Fifth row:</strong> equal space between column &amp; column.
+          </p>
+        </div>
+
+        <!-- Comment les colonnes s'enchaînent en fonction de leur taille-->
+        <h3 id="Column_wrapping">Column wrapping</h3>
+        <div class="container-fluid">
+          <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+          </p>
+          <div class="container my-3">
+            <div class="row">
+              <div class="col-9">.col-9</div>
+              <div class="col-4">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+              <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment sauter une ligne sans changer de row-->
+        <h3 id="Column_breaks">Column breaks</h3>
+        <div class="container-fluid">
+          <p>Breaking columns to a new line in flexbox requires a small hack: add an element with <code>width: 100%</code> wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple <code>.row</code>s, but not every implementation method can account for this.
+          </p>
+          <!-- Exemple de saut de ligne-->
+          <div class="container my-3">
+            <div class="row">
+              <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+              <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+
+              <!-- Force next columns to break to new line -->
+              <div class="w-100"></div>
+
+              <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+              <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+            </div>
+          </div>
+          <p>You may also apply this break at specific breakpoints with our <a href=#Display>responsive display utilities</a>.
+          </p>
+          <!-- Saut de ligne que pour certains breakpoints-->
+          <div class="container my-3">
+            <div class="row">
+              <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+              <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+
+              <!-- Force next columns to break to new line at md breakpoint and up -->
+              <div class="w-100 d-none d-md-block"></div>
+
+              <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+              <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+            </div>
+          </div>
+          <p>Here, to force to break to new line after the first two colomns at md breakpoint and up, we write:<code> &lt;div class="w-100 d-none d-md-block"&gt;&lt;/div&gt;</code>
+          </p>
+        </div>
+        <!-- Fin du div h2-container-->
+      </div>
+
+      <div class="container-fluid h2-container">
+        <!-- Réarranger l'ordre des colonnes-->
+        <h2 id="Reordering">Reordering</h2>
+        <!-- Les classes d'ordre-->
+        <h3>Order classes</h3>
+        <div class="container-fluid">
+          <p>Use <code>.order-</code> classes for controlling the <strong>visual</strong> order of your content. These classes are responsive, so you can set the order by breakpoint (e.g., <code>.order-1.order-md-2</code>). Includes support for 1 through 12 across all five grid tiers.
+          </p>
+          <div class="container my-3">
+            <div class="row">
+              <div class="col">
+                First in DOM, no order applied
+              </div>
+              <div class="col order-12">
+                Second in DOM, with a larger order
+              </div>
+              <div class="col order-1">
+                Third in DOM, with an order of 1
+              </div>
+            </div>
+          </div>
+          <p>There are also responsive <code>.order-first</code> and <code>.order-last</code> classes that change the order of an element by applying <code>order: -1</code> and <code>order: 13</code>, respectively. These classes can also be intermixed with the numbered <code>.order-*</code> classes as needed.
+          </p>
+          <div class="container my-3">
+            <div class="row">
+              <div class="col order-last">
+                First in DOM, ordered last
+              </div>
+              <div class="col">
+                Second in DOM, unordered
+              </div>
+              <div class="col order-first">
+                Third in DOM, ordered first
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin du div h2-container-->
+      </div>
+
+      <div class="container-fluid h2-container">
+        <!-- Décaler les colonnes-->
+        <h2 id="Offsetting_columns">Offsetting columns</h2>
+        <div class="container-fluid">
+          <p>You can offset grid columns in two ways: our responsive <code>.offset-</code> grid classes and our <a href="#Margin_utilities">margin utilities</a>. Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
+          </p>
+        </div>
+        <!-- Classes d'offset-->
+        <h3 id="Offset_classes">Offset classes</h3>
+        <div class="container-fluid">
+          <p>Move columns to the right using <code>.offset-md-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.offset-md-4</code> moves <code>.col-md-4</code> over four columns.
+          </p>
+          <div class="container my-3 text-monospace">
+            <div class="row my-2">
+              <div class="col-md-4">.col-md-4</div>
+              <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+            </div>
+            <div class="row my-2">
+              <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+              <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+            </div>
+            <div class="row my-2">
+              <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+            </div>
+          </div>
+          <p>In addition to column clearing at responsive breakpoints, you may need to reset offsets.
+          </p>
+          <div class="container my-3 text-monospace">
+            <div class="row my-2">
+              <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+              <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0</div>
+            </div>
+            <div class="row my-2">
+              <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+              <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outils pour forcer des colonnes voisines à s'éloigner les unes des autres-->
+        <!-- Explication des .m*-auto-->
+        <h3 id="Margin_utilities">Margin utilities</h3>
+        <div class="container-fluid">
+          <p>You can use margin utilities like <code>.mr-auto</code> to force sibling columns away from one another.
+          </p>
+          <div class="container my-3 text-monospace">
+            <div class="row my-2">
+              <div class="col-md-4">.col-md-4</div>
+              <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+            </div>
+            <div class="row my-2 text-monospace">
+              <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
+              <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
+            </div>
+            <div class="row my-2 text-monospace">
+              <div class="col-auto mr-auto">.col-auto .mr-auto</div>
+              <div class="col-auto">.col-auto</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nesting ou comment imbriquer des colonnes dans dans colonnes-->
+        <h3 id="Nesting">Nesting</h3>
+        <div class="container-fluid">
+          <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
+          </p>
+          <div class="container my-3">
+            <div class="row">
+              <div class="col-sm-9">
+                Level 1: .col-sm-9
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                    Level 2: .col-8 .col-sm-6
+                  </div>
+                  <div class="col-4 col-sm-6">
+                    Level 2: .col-4 .col-sm-6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Basically, you have to nest the Level 2 column under a new div row inside a level 1 column.
+          </p>
+        </div>
+        <!-- Fin du div h2-container-->
+      </div>
+      <!-- Fin du div h1-container-->
     </div>
-
-    <h3>Equal-width</h3>
-    <div class="container-fluid">
-      <!-- Container contenant 3 colonnes de largeurs égales qqe soit la taille de l'appareil-->
-      <!-- Le container permet de centrer et de faire un 'pad' horizontal du contenu de notre site-->
-      <div class="container my-2"> <!-- classe my-2 = marge en haut et en bas de 0.5rem-->
-        <!-- Ce div avec la classe "row" permet de 'wrapper' (entourer) les colonnes à l'intérieur pour que le texte à l'intérieur soit toujours visuellement aligné en bas à gauche-->
-        <div class="row">
-          <!-- La classe "col" de ce div permet de lui dire de se comporter comme une colonne. Si plusieurs divs de colonnes sont situés dans le même div "row", ils se répartiront en largeurs égales sur toute la largeur du container-->
-          <div class="col text-monospace">.col </div>
-          <div class="col">Trois d'affilée permet de faire 3 colonnes</div>
-          <div class="col">de largeurs égales sur toute la largeur du container.</div>
-        </div>
-      </div>
-      <p>Si on avait mis quatre div de classe "col" de suite, on aurait eu 4 colonnes de même largeur et ainsi de suite.
-      </p>
-    </div>
-
-    <h3>Multi-line and setting one column width</h3>
-    <div class="container-fluid">
-      <!-- Exemple d'un container avec deux lignes-->
-      <div class="container text-monospace my-3">
-        <!-- 4 colonnes de même largeur-->
-        <div class="row">
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-        </div>
-        <!-- 2 colonnes, la 1ère occupe 2/3 du container, la deuxième 1/3-->
-        <div class="row">
-          <div class="col-8 bg-gray">.col-8</div>
-          <div class="col-4">.col-4</div>
-          <!-- Élément permettant de sauter une ligne dans le même div row-->
-          <div class="w-100"></div>
-          <!-- 3 colonnes sur toute la largeur, celle du milieu est deux fois plus grande que celles de part et d'autres-->
-          <div class="col-3">.col-3</div>
-          <div class="col-6">.col-6</div>
-          <div class="col-3">.col-3</div>
-        </div>
-      </div>
-      <p>Première ligne : 4 colonnes de même largeur occupant la totalité de la largeur du container<br />
-        Deuxième ligne : 2 colonnes, la première occupe 2/3 du container, la deuxième 1/3. <br />
-        Troisième ligne : 3 colonnes sur toute la largeur, celle du milieu est deux fois plus grande que celles de part et d'autres.
-      </p>
-    </div>
-
-    <!-- On peut créer des colonnes qui varient en taille selon leur contenu.-->
-    <h3>Variable width content</h3>
-    <div class="container-fluid">
-      <div class="container my-3">
-        <div class="row">
-          <div class="col-auto text-monospace">
-            .col-auto
-          </div>
-          <div class="col-auto">
-            Variable width content
-          </div>
-          <div class="col-auto">
-            Other variable width content
-          </div>
-        </div>
-      </div>
-      <p>On peut créer des colonnes qui varient en taille selon leur contenu.
-      </p>
-    </div>
-
-    <!-- On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en fonction du breakpoint.-->
-    <h3>Stacked to horizontal</h3>
-    <div class="container-fluid">
-      <p>
-        On peut faire en sorte que les colonnes se stackent les unes au-dessus des autres en-dessous d'un certain breakpoint.
-      </p>
-      <div class="container">
-        <div class="row my-3 text-monospace text-primary">
-          <div class="col-sm-8">.col-sm-8</div>
-          <div class="col-sm-4">.col-sm-4</div>
-        </div>
-        <div class="row my-3 text-monospace text-secondary">
-          <div class="col-md">.col-md</div>
-          <div class="col-md">.col-md</div>
-          <div class="col-md">.col-md</div>
-        </div>
-        <div class="row my-3 text-monospace text-success">
-          <div class="col-lg">.col-lg</div>
-          <div class="col-lg-5">.col-lg-5</div>
-          <div class="col-lg">.col-lg</div>
-        </div>
-        <div class="row my-3 text-monospace text-danger">
-          <div class="col-xl-2">.col-xl-2</div>
-          <div class="col-xl">.col-xl</div>
-          <div class="col-xl-2">.col-xl-2</div>
-        </div>
-      </div>
-    </div>
-    <!-- On peut coupler les deux types de codes pour que les colonnes aient une certaine taille en-dessous d'un certain breakpoint, une certaine taille au-dessus d'un certain breakpoint etc.-->
-    <h3>Mix and match</h3>
-    <div class="container-fluid">
-      <p>On peut coupler les deux types de codes pour que les colonnes aient une certaine taille en-dessous d'un certain breakpoint, une certaine taille au-dessus d'un certain breakpoint etc.
-      </p>
-      <div class="container">
-        <!-- Au-dessus du breakpoint md, les deux colonnes sont sur la même ligne, la première étant deux fois plus grande que la deuxième-->
-        <!-- En-dessous du breakpoint md, les deux colonnes sont l'une au-dessus de l'autre, la première sur toute la largeur, la deuxième sur la moitié-->
-        <div class="row my-3 text-monospace text-primary">
-          <div class="col-md-8">.col-md-8</div>
-          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-        </div>
-        <!-- Au-dessus du breakpoint md, les trois colonnes sont également réparties sur la largeur-->
-        <!-- En-dessous du breakpoint md, deux colonnes sont également réparties sur la largeur, et la troisième prend la moitié de la largeur sur une seconde ligne-->
-        <div class="row my-3 text-monospace text-secondary">
-          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Partie pour expliquer les gutters-->
-    <h3>Gutters</h3>
-    <div class="container-fluid">
-      <p>Each column has horizontal padding (called a gutter) for controlling the space between them. This padding is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.<br />
-        Columns have horizontal padding to create the gutters between individual columns, however, you can remove the margin from rows and padding from columns with <code>.no-gutters</code> on the <code>.row.</code>
-      </p>
-      <div class="row justify-content-center mb-3 no-gutters">
-        <div class="col-auto">This is what happens</div>
-        <div class="col-auto">when there is no gutters</div>
-      </div>
-      <p>Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the <code>.row</code> and matching padding utilities on the <code>.col</code>s. The <code>.container</code> or <code>.container-fluid</code> parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.<br />
-        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the <code>.col</code> padding with <code>.px-lg-5</code>, counteracted that with <code>.mx-lg-n5</code> on the parent <code>.row</code> and then adjusted the <code>.container</code> wrapper with <code>.px-lg-5</code>.
-      </p>
-      <div class="container px-lg-5">
-        <div class="row mx-lg-n5">
-          <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
-          <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Configurer les divs row pour contrôler en amont le nombre de colonnes pour chaque ligne (selon le breakpoint ou non)-->
-    <h3>Row columns</h3>
-    <div class="container-fluid">
-      <p>Use the responsive <code>.row-cols-*</code> classes to quickly set the number of columns that best render your content and layout. Whereas normal <code>.col-*</code> classes apply to the individual columns (e.g., <code>.col-md-4</code>), the row columns classes are set on the parent <code>.row</code> as a shortcut.
-      </p>
-      <p>Use these row columns classes to quickly create basic grid layouts or to control your card layouts.
-      </p>
-      <!-- Exemple avec quatre colonnes réparties sur deux lignes-->
-      <div class="container">
-        <div class="row mt-2 mb-3 row-cols-2">
-          <div class="col">Here is</div>
-          <div class="col">what happens</div>
-          <div class="col">if you write</div>
-          <div class="col text-monospace">.row .row-cols-2</div>
-        </div>
-        <div class="row my-3 row-cols-1 row-cols-sm-2 row-cols-md-4">
-          <div class="col">Here is everything I wrote:</div>
-          <div class="col text-monospace">row-cols-1</div>
-          <div class="col text-monospace">row-cols-sm-2</div>
-          <div class="col text-monospace">row-cols-md-4</div>
-        </div>
-      </div>
-      <p><u>Example 1:</u> 2 columns by row.<br/>
-        <u>Example 2:</u> over md -> 4 columns in one row, between sm &amp md -> 2 columns by row, below sm -> 1 column by row.
-      </p>
-    </div>
-
-    <!-- Partie dédiée à l'alignement des colonnes-->
-    <h2 id="Alignment">Alignment</h2>
-
-    <h3>Vertical Alignment</h3>
-    <div class="container-fluid">
-      <!-- align-items-*-->
-      <div class="container my-3">
-        <!-- Aligne les colonnes verticallement en haut du contaner-->
-        <div class="row my-3 align-items-start">
-          <div class="col">
-            In div <code>row</code>
-          </div>
-          <div class="col text-monospace">
-            .align-items-start
-          </div>
-          <div class="col">
-            aligns the columns vertically at the top
-          </div>
-        </div>
-        <!-- Aligne les colonnes verticallement au centre du container-->
-        <div class="row my-3 align-items-center">
-          <div class="col">
-            In div <code>row</code>
-          </div>
-          <div class="col text-monospace">
-            .align-items-center
-          </div>
-          <div class="col">
-            aligns the columns vertically at the center
-          </div>
-        </div>
-        <!-- Aligne les colonnes verticallement en bas du container-->
-        <div class="row my-3 align-items-end">
-          <div class="col">
-            In div <code>row</code>
-          </div>
-          <div class="col text-monospace">
-            .align-items-end
-          </div>
-          <div class="col">
-            aligns the columns vertically at the bottom
-          </div>
-        </div>
-      </div>
-      <p><code>.align-items-*</code> aligns the whole row at the top, the center or the bottom of the container.
-      </p>
-      <!-- align-self-*-->
-      <div class="container my-3">
-        <div class="row text-monospace">
-          <div class="col align-self-start">
-            .align-self-start
-          </div>
-          <div class="col align-self-center">
-            .align-self-center
-          </div>
-          <div class="col align-self-end">
-            .align-self-end
-          </div>
-        </div>
-      </div>
-      <p><code>.align-self-*</code> aligns the current column at the top, the center or the bottom of the container.
-      </p>
-    </div>
-
-    <h3>Horizontal Alignment</h3>
-    <div class="container-fluid">
-      <!-- justify-content-*-->
-      <div class="container my-3">
-        <!-- Aligne horizontalement les colonnes à gauche-->
-        <div class="row my-3 justify-content-start">
-          <div class="col-4">
-            In div <code>row</code>
-          </div>
-          <div class="col-4 text-monospace">
-            .justify-content-start
-          </div>
-        </div>
-        <!-- Aligne horizontalement les colonnes au centre-->
-        <div class="row my-3 justify-content-center">
-          <div class="col-4">
-            In div <code>row</code>
-          </div>
-          <div class="col-4 text-monospace">
-            .justify-content-center
-          </div>
-        </div>
-        <!-- Aligne horizontalement les colonnes à droite-->
-        <div class="row my-3 justify-content-end">
-          <div class="col-4">
-            In div <code>row</code>
-          </div>
-          <div class="col-4 text-monospace">
-            .justify-content-end
-          </div>
-        </div>
-        <!-- Aligne horizontalement les colonnes pour que l'espace entre le bord et chaque colonne fasse la même taille-->
-        <!-- Ici, blank:4/3  column1:4  blank:4/3 column2:4 blank:4/3 -->
-        <div class="row my-3 justify-content-around">
-          <div class="col-4">
-            In div <code>row</code>
-          </div>
-          <div class="col-4 text-monospace">
-            .justify-content-around
-          </div>
-        </div>
-        <!-- Aligne horizontalement les colonnes pour que l'espace entre chaque colonne fasse la même taille-->
-        <!-- Ici, column1:4 blank:4 column2:4 -->
-        <div class="row my-3 justify-content-between">
-          <div class="col-4">
-            In div <code>row</code>
-          </div>
-          <div class="col-4 text-monospace">
-            .justify-content-between
-          </div>
-        </div>
-      </div>
-      <p><strong>First row:</strong> columns align horizontally to the left.
-      </p>
-      <p><strong>Second row:</strong> columns align horizontally at the center.
-      </p>
-      <p><strong>Third row:</strong> columns align horizontally to the right.
-      </p>
-      <p><strong>Fouth row:</strong> equal space between border &amp columns and column &amp column.
-      </p>
-      <p><strong>Fifth row:</strong> equal space between column &amp column.
-      </p>
-    </div>
-
-    <!-- Comment les colonnes s'enchaînent en fonction de leur taille-->
-    <h3>Column wrapping</h3>
-    <div class="container-fluid">
-      <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
-      </p>
-      <div class="container my-3">
-        <div class="row">
-          <div class="col-9">.col-9</div>
-          <div class="col-4">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
-          <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Comment sauter une ligne sans changer de row-->
-    <h3>Column breaks</h3>
-    <div class="container-fluid">
-      <p>Breaking columns to a new line in flexbox requires a small hack: add an element with <code>width: 100%</code> wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple <code>.row</code>s, but not every implementation method can account for this.
-      </p>
-      <!-- Exemple de saut de ligne-->
-      <div class="container my-3">
-        <div class="row">
-          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-
-          <!-- Force next columns to break to new line -->
-          <div class="w-100"></div>
-
-          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-        </div>
-      </div>
-      <p>You may also apply this break at specific breakpoints with our <a href=#Display>responsive display utilities</a>.
-      </p>
-      <!-- Saut de ligne que pour certains breakpoints-->
-      <div class="container my-3">
-        <div class="row">
-          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-
-          <!-- Force next columns to break to new line at md breakpoint and up -->
-          <div class="w-100 d-none d-md-block"></div>
-
-          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
-        </div>
-      </div>
-      <p>Here, to force to break to new line after the first two colomns at md breakpoint and up, we write:<code> &lt;div class="w-100 d-none d-md-block"&gt;&lt;/div&gt;</code>
-      </p>
-    </div>
-
   </main>
 </body>
 
