@@ -1,18 +1,63 @@
+/* Pour le spyscroll*/
 body{
   position: relative;
 }
 
+/* Pour justifier le texte par défaut*/
 p{
   text-align: justify;
 }
-
+/* Pour rendre les colonnes visibles en leur donnant un fond et une bordure, plus aligner le texte au centre
 .row>[class^=col]{
   background-color: rgba(86,61,124,.15);
   border: 1px solid rgba(86,61,124,.2);
   text-align: center;
 }
+*/
 
+/* Technique quand les titres buguent
 h1,h2,h3{
   padding-top: 60px;
   margin-top: -60px;
+}
+*/
+
+/* Pour fixer le menu latéral sur le côté*/
+#sidebar{
+  position: fixed;
+}
+
+/* Animation du casque qui apparaît au passage de la souris */
+@keyframes casque {
+  0% {
+    opacity: 0;
+ }
+
+  100%{
+    opacity: 1;
+  }
+}
+/*Propriétés empiriques de nos photos pour le team member avant hovering*/
+.team_member_image
+{
+  position: absolute;
+  margin: 20px 0 0 50px;
+  width: 300px;
+  height: 300px;
+  transition: 0.2s;
+}
+
+/*Propriétés empiriques  du casque pour le team member avant hovering*/
+.team_member_overlay
+{
+  position:absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+}
+
+/*Propriétés empiriques du casque pour le team member après hovering*/
+.team_member_overlay:hover
+{
+animation: casque 2s ease forwards;
 }

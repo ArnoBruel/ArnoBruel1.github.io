@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Modeling</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, Bootstrap bundle JS -->
+  <script src="js/jquery-3.5.0.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <!-- Css personnel-->
+  <link rel="stylesheet" href="css/css_perso.css" />
+</head>
+<body>
+<div class="container-fluid">
+  <h1 id="model">Modeling</h1>
+  <p>Our project to produce vitamin A and flavor by <em>Saccharomyces Cerevisiae</em> on space thank to a co culture with <em>Clostridium Ljungdahlii</em> rapidly raise complex issues. In particular, in terms of yield, flux and feasibility of our system. Naturally one way to answer to these question was to modelling our system.
+  </p>
+  <h2 id="constraints">Constraints</h2>
+  <p>The first step, before to ask anything to our models, is to resume all our constraints of our systems that will be applied to our models. So, in a space culture we get few constraints :</p>
+  <ul>
+    <li>No carbohydrates as carbon source</li>
+    <li>CO2 as carbon source</li>
+    <li>H2 as energy source</li>
+    <li>A  minimum culture medium with the least compound</li>
+  </ul>
+  <h2 id="questioning">Questioning</h2>
+  <p>The questioning plan of our system can be decomposed by different questions, which must be the simplest, in order to have a precise answer.</p>
+  <ol>
+    <li>
+      <p>What is the most suitable minimal culture medium within constraints ?<br>
+        Our project is in a spaceship and the resources are very limited so we must know the minimum medium that we need to make our coculture work.
+      </p>
+    </li>
+    <li>
+      <p>How much carbon products can C. ljungdahlii  make?<br>
+        Which is the theoretical maximum yield of acetate and ethanol in function of μ? In order to know if the production of carbon source of C. ljungdahlii is enough to allow S. cerevisiae to growth.
+      </p>
+    </li>
+  </ol>
+  <p>Which is the theoretical maximum yield of acetate in function of μ?<br>
+    Our constraints are :
+  </p>
+  <ul>
+    <li>No carbohydrate source</li>
+    <li>H2 as energy source</li>
+    <li>CO2 as carbon source</li>
+    <li>Objective function : acetate</li>
+    <li>model : iHN637</li>
+  </ul>
+  <p>Which is the theoretical maximum yield of ethanol in function of μ<br>
+    Our constraints are :
+  </p>
+  <ul>
+    <li>No carbohydrate source</li>
+    <li>H2 as energy source</li>
+    <li>CO2 as carbon source</li>
+    <li>Objective function : ethanol</li>
+    <li>model : iHN637</li>
+  </ul>
+  <ol start="3">
+    <li>How fast does S. cerevisiae grow on these products as carbon source ?<br>
+      Which is the theoretical maximum yield of μ depending on the acetate and ethanol production.
+    </li>
+  </ol>
+  <p>Which is the theoretical maximum yield of μ depending on the acetate production?<br>
+    In order to know how fast at maximum will growth S. cerevisiae with the acetate production of C. Ljungdahlii as uptake.<br>
+    Our constraints are :
+  </p>
+  <ul>
+    <li>No carbohydrate source</li>
+    <li>O2 as energy source</li>
+    <li>acetate as carbon source</li>
+    <li>Objective function : biomass</li>
+    <li>model : yeast_7.6.xml</li>
+  </ul>
+  <p>Which is the theoretical maximum yield of μ depending on the ethanol production.<br>
+    In order to know how fast at maximum will growth S. cerevisiae with the ethanol production of C. Ljungdahlii as uptake.<br>
+    Our constraints are:
+  </p>
+  <ul>
+    <li>No carbohydrate source (0)</li>
+    <li>O2 as energy source (80)</li>
+    <li>ethanol as carbon source (5)</li>
+    <li>Objective function : biomass</li>
+    <li>model : yeast_7.6.xml</li>
+  </ul>
+  <ol start="4">
+    <li>
+      <p>How much CO2 does S. cerevisiae produce for C. ljungdahlii ?<br>
+        Which is the theoretical maximum yield of CO2 in output of S. cerevisiae? The theoretical maximum yield of CO2 in output of S.Cerevisiae which will become an input of C.Ljungdahlii
+      </p>
+    </li>
+    <li>
+      <p>What is the yield of our interest molecules that can be produced by S. cerevisiae ?<br>
+        At which scale can we expect to produce our interest compounds? Our interest pathway is the mevalonate pathway in charge to provide the precursors of all our interest molecules.
+      </p>
+    </li>
+    <li>
+      <p>This system work in its globalist and what will be its characteristics ?
+      </p>
+    </li>
+  </ol>
+</div>
+</body>
+
+</html>

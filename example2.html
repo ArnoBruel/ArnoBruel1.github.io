@@ -13,231 +13,233 @@
   <script src="js/bootstrap.bundle.js"></script>
   <link rel="stylesheet" href="css/css_perso.css" />
 </head>
-<body>
-    <header class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="png/logo.png" width="30" height="30" alt=""> iGEM Toulouse INSA-UPS
-      </a>
-    </header>
-  <div class="row">
-    <div id="Tab-wrapper" class="col-3 col-lg-2 d-none d-sm-block position-sticky">
-      <nav id="sidebar" class="navbar navbar-light bg-light flex-column">
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-link" href="#Layout">Layout</a>
+<body data-spy="scroll" data-target="#sidebar">
+  <header class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="png/IGEMINI_couleur.png" width="30" height="30" alt=""> iGEM Toulouse INSA-UPS
+    </a>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="Tab-wrapper" class="col-3 col-lg-2 d-none d-sm-block">
+        <nav id="sidebar" class="navbar navbar-light bg-light flex-column mt-3">
           <nav class="nav nav-pills flex-column">
-            <a class="nav-link ml-2 my-1" href="#Breakpoints">Breakpoints</a>
-            <a class="nav-link ml-2 my-1" href="#Containers">Containers</a>
-            <a class="nav-link ml-2 my-1" href="#Grid_System">Grid System</a>
-          </nav>
-          <a class="nav-link" href="#item2">Item 2</a>
-          <a class="nav-link" href="#item-3">Item 3</a>
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link ml-2 my-1" href="#item-3-1">Item 3-1</a>
-            <a class="nav-link ml-2 my-1" href="#item-3-2">Item 3-2</a>
+            <a class="nav-link" href="#Layout">Layout</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link ml-2 my-1" href="#Breakpoints">Breakpoints</a>
+              <a class="nav-link ml-2 my-1" href="#Containers">Containers</a>
+              <a class="nav-link ml-2 my-1" href="#Grid_System">Grid System</a>
+            </nav>
+            <a class="nav-link" href="#item2">Item 2</a>
+            <a class="nav-link" href="#item-3">Item 3</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link ml-2 my-1" href="#item-3-1">Item 3-1</a>
+              <a class="nav-link ml-2 my-1" href="#item-3-2">Item 3-2</a>
+            </nav>
           </nav>
         </nav>
-      </nav>
-    </div>
-    <div class="col col-sm-9 col-lg-10 position-relative vh-sp overflow-auto" data-spy="scroll" data-target="#sidebar">
-      <h1 id="Layout">Layout</h1>
-      <!-- Descriptif des breakpoints, point crucial pour rendre le site "responsive" à différents appareils.-->
-      <h2 class="ml-2" id="Breakpoints">Breakpoints</h2>
-      <!-- Tableau explicitant les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.-->
-      <table class="table text-left">
-        <thead class="thead-light">
-          <tr>
-            <th>Breakpoints' size
-            </th>
-            <th>
-              Extra small<br>
-              <span class="font-weight-normal">&lt;576px</span>
-            </th>
-            <th>
-              Small<br>
-              <span class="font-weight-normal">≥576px</span>
-            </th>
-            <th>
-              Medium<br>
-              <span class="font-weight-normal">≥768px</span>
-            </th>
-            <th>
-              Large<br>
-              <span class="font-weight-normal">≥992px</span>
-            </th>
-            <th>
-              Extra large<br>
-              <span class="font-weight-normal">≥1200px</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Type of screen</td>
-            <td>Portrait phones</td>
-            <td>Landscape phones</td>
-            <td>Tablets</td>
-            <td>Desktops</td>
-            <td>Large desktops</td>
-          </tr>
-        </tbody>
-      </table>
-      <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
-        Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
-      </p>
-      <!-- Partie sur les containers-->
-      <!-- J'ai rajouté la classe ml-2 pour une marge de 0.5rem à gauche, je l'ai également fait pour la plupart des éléments ci-dessous-->
-      <h2 class="ml-2" id="Containers"> Containers</h2>
-      <!-- En plus de la classe m-2 (marge de 0.5rem de chaque côté), j'ai rajouté p-3 pour un padding de 1rem dans chaque direction-->
-      <!-- La classe bg-light permet de rendre le fond gris clair (voir chapitre sur les couleurs)-->
-      <div class="container p-3 m-2 bg-light">
-        <!-- La balise small permet de mettre un texte en plus petit supplémentaire, généralement à un header-->
-        <!-- L'attribut "text-muted" permet d'afficher le texte en plus clair-->
-        <p>Simple Container <small class="text-muted">-- Max-width set for each responsive breakpoints</small>
-        </p>
-        <!-- Quant à "text-monospace", ça permet d'utiliser la police monospace de Bootstrap qui est assez cool et fait un peu "code"-->
-        <!-- La balise "code" existe aussi et fait un petit texte rose sympa mais que je n'ai pas eu envie d'utiliser-->
-        <p class="text-monospace">.container
-        </p>
       </div>
+      <div class="col col-sm-9 col-lg-10 overflow-auto">
+        <h1 id="Layout">Layout</h1>
+        <!-- Descriptif des breakpoints, point crucial pour rendre le site "responsive" à différents appareils.-->
+        <h2 class="ml-2" id="Breakpoints">Breakpoints</h2>
+        <!-- Tableau explicitant les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.-->
+        <table class="table text-left">
+          <thead class="thead-light">
+            <tr>
+              <th>Breakpoints' size
+              </th>
+              <th>
+                Extra small<br>
+                <span class="font-weight-normal">&lt;576px</span>
+              </th>
+              <th>
+                Small<br>
+                <span class="font-weight-normal">≥576px</span>
+              </th>
+              <th>
+                Medium<br>
+                <span class="font-weight-normal">≥768px</span>
+              </th>
+              <th>
+                Large<br>
+                <span class="font-weight-normal">≥992px</span>
+              </th>
+              <th>
+                Extra large<br>
+                <span class="font-weight-normal">≥1200px</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Type of screen</td>
+              <td>Portrait phones</td>
+              <td>Landscape phones</td>
+              <td>Tablets</td>
+              <td>Desktops</td>
+              <td>Large desktops</td>
+            </tr>
+          </tbody>
+        </table>
+        <p> Descriptif des breakpoints, point crucial pour rendre le site "responsive" (capable de s'adapter) à différents appareils. <br/>
+          Le tableau explicite les tailles des breakpoints ainsi que les appareils généralement liés à ceux-ci.
+        </p>
+        <!-- Partie sur les containers-->
+        <!-- J'ai rajouté la classe ml-2 pour une marge de 0.5rem à gauche, je l'ai également fait pour la plupart des éléments ci-dessous-->
+        <h2 class="ml-2" id="Containers"> Containers</h2>
+        <!-- En plus de la classe m-2 (marge de 0.5rem de chaque côté), j'ai rajouté p-3 pour un padding de 1rem dans chaque direction-->
+        <!-- La classe bg-light permet de rendre le fond gris clair (voir chapitre sur les couleurs)-->
+        <div class="container p-3 m-2 bg-light">
+          <!-- La balise small permet de mettre un texte en plus petit supplémentaire, généralement à un header-->
+          <!-- L'attribut "text-muted" permet d'afficher le texte en plus clair-->
+          <p>Simple Container <small class="text-muted">-- Max-width set for each responsive breakpoints</small>
+          </p>
+          <!-- Quant à "text-monospace", ça permet d'utiliser la police monospace de Bootstrap qui est assez cool et fait un peu "code"-->
+          <!-- La balise "code" existe aussi et fait un petit texte rose sympa mais que je n'ai pas eu envie d'utiliser-->
+          <p class="text-monospace">.container
+          </p>
+        </div>
 
-      <div class="container-fluid p-3 bg-light">
-        <p>Fluid Container <small class="text-muted">-- 100% width at each responive breakpoints</small>
-        </p>
-        <p class="text-monospace">.container-fluid
-        </p>
-      </div>
+        <div class="container-fluid p-3 bg-light">
+          <p>Fluid Container <small class="text-muted">-- 100% width at each responive breakpoints</small>
+          </p>
+          <p class="text-monospace">.container-fluid
+          </p>
+        </div>
 
-      <div class="container-sm p-3 m-2 bg-light">
-        <p>Container with small breakpoint <small class="text-muted">-- 100% wide until small breakpoint is reached</small>
-        </p>
-        <p class="text-monospace">.container-sm
-        </p>
-      </div>
+        <div class="container-sm p-3 m-2 bg-light">
+          <p>Container with small breakpoint <small class="text-muted">-- 100% wide until small breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-sm
+          </p>
+        </div>
 
-      <div class="container-md p-3 m-2 bg-light">
-        <p>Container with medium breakpoint <small class="text-muted">-- 100% wide until medium breakpoint is reached</small>
-        </p>
-        <p class="text-monospace">.container-md
-        </p>
-      </div>
+        <div class="container-md p-3 m-2 bg-light">
+          <p>Container with medium breakpoint <small class="text-muted">-- 100% wide until medium breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-md
+          </p>
+        </div>
 
-      <div class="container-lg p-3 m-2 bg-light">
-        <p>Container with large breakpoint <small class="text-muted">-- 100% wide until large breakpoint is reached</small>
-        </p>
-        <p class="text-monospace">.container-lg
-        </p>
-      </div>
+        <div class="container-lg p-3 m-2 bg-light">
+          <p>Container with large breakpoint <small class="text-muted">-- 100% wide until large breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-lg
+          </p>
+        </div>
 
-      <div class="container-xl p-3 m-2 bg-light">
-        <p>Container with extra large breakpoint <small class="text-muted">-- 100% wide until extra large breakpoint is reached</small>
+        <div class="container-xl p-3 m-2 bg-light">
+          <p>Container with extra large breakpoint <small class="text-muted">-- 100% wide until extra large breakpoint is reached</small>
+          </p>
+          <p class="text-monospace">.container-xl
+          </p>
+        </div>
+        <!-- Partie dédiée au système de grille !-->
+        <h2 class="ml-2" id="Grid_System">Grid system</h2>
+        <!-- Tableau récapitulant les propriétés du système de grille de Bootstrap-->
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="text-center">
+                Extra small<br>
+                <small>&lt;576px</small>
+              </th>
+              <th class="text-center">
+                Small<br>
+                <small>≥576px</small>
+              </th>
+              <th class="text-center">
+                Medium<br>
+                <small>≥768px</small>
+              </th>
+              <th class="text-center">
+                Large<br>
+                <small>≥992px</small>
+              </th>
+              <th class="text-center">
+                Extra large<br>
+                <small>≥1200px</small>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Le "text-nowrap" permet d'empêcher le retour automatique à la ligne-->
+              <th class="text-nowrap" scope="row">Max container width</th>
+              <!-- Taille maximale du container selon le breakpoint-->
+              <td>None (auto)</td>
+              <td>540px</td>
+              <td>720px</td>
+              <td>960px</td>
+              <td>1140px</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="row">Class prefix</th>
+              <td><code>.col-</code></td>
+              <!-- Colonnes stackées jusqu'au small breakpoint-->
+              <td><code>.col-sm-</code></td>
+              <!-- Existe pour tous les autres types de breakpoints-->
+              <td><code>.col-md-</code></td>
+              <td><code>.col-lg-</code></td>
+              <td><code>.col-xl-</code></td>
+            </tr>
+            <tr>
+              <!-- Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté de l'écran-->
+              <th class="text-nowrap" scope="row"># of columns</th>
+              <td colspan="5">12</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="row">Gutter width</th>
+              <td colspan="5">30px (15px on each side of a column)</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="row">Nestable</th>
+              <td colspan="5">Yes</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="row">Column ordering</th>
+              <td colspan="5">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+        <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
+          Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
         </p>
-        <p class="text-monospace">.container-xl
-        </p>
-      </div>
-      <!-- Partie dédiée au système de grille !-->
-      <h2 class="ml-2" id="Grid_System">Grid system</h2>
-      <!-- Tableau récapitulant les propriétés du système de grille de Bootstrap-->
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="text-center">
-              Extra small<br>
-              <small>&lt;576px</small>
-            </th>
-            <th class="text-center">
-              Small<br>
-              <small>≥576px</small>
-            </th>
-            <th class="text-center">
-              Medium<br>
-              <small>≥768px</small>
-            </th>
-            <th class="text-center">
-              Large<br>
-              <small>≥992px</small>
-            </th>
-            <th class="text-center">
-              Extra large<br>
-              <small>≥1200px</small>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <!-- Le "text-nowrap" permet d'empêcher le retour automatique à la ligne-->
-            <th class="text-nowrap" scope="row">Max container width</th>
-            <!-- Taille maximale du container selon le breakpoint-->
-            <td>None (auto)</td>
-            <td>540px</td>
-            <td>720px</td>
-            <td>960px</td>
-            <td>1140px</td>
-          </tr>
-          <tr>
-            <th class="text-nowrap" scope="row">Class prefix</th>
-            <td><code>.col-</code></td>
-            <!-- Colonnes stackées jusqu'au small breakpoint-->
-            <td><code>.col-sm-</code></td>
-            <!-- Existe pour tous les autres types de breakpoints-->
-            <td><code>.col-md-</code></td>
-            <td><code>.col-lg-</code></td>
-            <td><code>.col-xl-</code></td>
-          </tr>
-          <tr>
-            <!-- Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté de l'écran-->
-            <th class="text-nowrap" scope="row"># of columns</th>
-            <td colspan="5">12</td>
-          </tr>
-          <tr>
-            <th class="text-nowrap" scope="row">Gutter width</th>
-            <td colspan="5">30px (15px on each side of a column)</td>
-          </tr>
-          <tr>
-            <th class="text-nowrap" scope="row">Nestable</th>
-            <td colspan="5">Yes</td>
-          </tr>
-          <tr>
-            <th class="text-nowrap" scope="row">Column ordering</th>
-            <td colspan="5">Yes</td>
-          </tr>
-        </tbody>
-      </table>
-      <p> Bootstrap fonctionne sur un système à 12 colonnes. C'est-à-dire que 12 colonnes balayent l'entièreté d'un container. <br />
-        Concrètement, si on souhaite qu'une colomne dans un container prenne 2/3 du container quelque soit l'appareil : on écrira <span class="text-monospace">.col-8</span> car 8 correspond à 2/3 de 12.
-      </p>
-      <!-- Container contenant 3 colonnes de largeurs égales qqe soit la taille de l'appareil-->
-      <!-- Le container permet de centrer et de faire un 'pad' horizontal du contenu de notre site-->
-      <div class="container my-2"> <!-- classe my-2 = marge en haut et en bas de 0.5rem-->
-        <!-- Ce div avec la classe "row" permet de 'wrapper' (entourer) les colonnes à l'intérieur pour que le texte à l'intérieur soit toujours visuellement aligné en bas à gauche-->
-        <div class="row">
-          <!-- La classe "col" de ce div permet de lui dire de se comporter comme une colonne. Si plusieurs divs de colonnes sont situés dans le même div "row", ils se répartiront en largeurs égales sur toute la largeur du container-->
-          <div class="col text-monospace">
-            .col
-          </div>
-          <div class="col">
-            Trois d'affilée permet de faire 3 colonnes
-          </div>
-          <div class="col">
-            de largeurs égales sur toute la largeur du container.
+        <!-- Container contenant 3 colonnes de largeurs égales qqe soit la taille de l'appareil-->
+        <!-- Le container permet de centrer et de faire un 'pad' horizontal du contenu de notre site-->
+        <div class="container my-2"> <!-- classe my-2 = marge en haut et en bas de 0.5rem-->
+          <!-- Ce div avec la classe "row" permet de 'wrapper' (entourer) les colonnes à l'intérieur pour que le texte à l'intérieur soit toujours visuellement aligné en bas à gauche-->
+          <div class="row">
+            <!-- La classe "col" de ce div permet de lui dire de se comporter comme une colonne. Si plusieurs divs de colonnes sont situés dans le même div "row", ils se répartiront en largeurs égales sur toute la largeur du container-->
+            <div class="col text-monospace">
+              .col
+            </div>
+            <div class="col">
+              Trois d'affilée permet de faire 3 colonnes
+            </div>
+            <div class="col">
+              de largeurs égales sur toute la largeur du container.
+            </div>
           </div>
         </div>
-      </div>
-      <p>Si on avait mis quatre div de classe "col" de suite, on aurait eu 4 colonnes de même largeur et ainsi de suite.
-      </p>
-      <!-- Exemple d'un container avec deux lignes-->
-      <div class="container text-monospace">
-        <!-- 4 colonnes de même largeur-->
-        <div class="row">
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-          <div class="col">.col</div>
-        </div>
-        <!-- 2 colonnes, la 1ère occupe 2/3 du container, la deuxième 1/3-->
-        <div class="row">
-          <div class="col-8">.col-8</div>
-          <div class="col-4">.col-4</div>
+        <p>Si on avait mis quatre div de classe "col" de suite, on aurait eu 4 colonnes de même largeur et ainsi de suite.
+        </p>
+        <!-- Exemple d'un container avec deux lignes-->
+        <div class="container text-monospace">
+          <!-- 4 colonnes de même largeur-->
+          <div class="row">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+          </div>
+          <!-- 2 colonnes, la 1ère occupe 2/3 du container, la deuxième 1/3-->
+          <div class="row">
+            <div class="col-8">.col-8</div>
+            <div class="col-4">.col-4</div>
+          </div>
         </div>
       </div>
     </div>
