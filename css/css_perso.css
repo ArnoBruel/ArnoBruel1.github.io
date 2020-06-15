@@ -15,12 +15,11 @@ p{
 }
 */
 
-/* Technique quand les titres buguent
+/*Technique pour le scrollspy quand les titres buguent*/
 h1,h2,h3{
   padding-top: 60px;
   margin-top: -60px;
 }
-*/
 
 /* Pour fixer le menu latéral sur le côté*/
 #sidebar{
