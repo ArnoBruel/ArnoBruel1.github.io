@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-   <!-- Required meta tags -->
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Home</title>
@@ -9,13 +9,149 @@
   <link rel="stylesheet" href="css/bootstrap.css" />
   <!-- Optional JavaScript -->
   <!-- jQuery first, Bootstrap bundle JS -->
-  <script src="js/jquery-3.5.0.js" /></script>
+  <script src="js/jquery-3.5.0.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <!-- Css personnel-->
   <link rel="stylesheet" href="css/css_perso.css" />
 </head>
 <body>
-<div class="container my-3"><img src="png/Arno.png" class="team_member_image" alt=""><img src="svg/casque.svg" alt="" class="team_member_overlay" /></div>
+  <!-- DÉBUT globalWrapper-->
+  <div id="globalWrapper">
+    <!-- DÉBUT content-->
+    <div id="content" class="mw-body" role="main">
+      <div class="container-fluid banner">
+      </div>
+      <!-- DÉBUT MENU-->
+      <div id="Menu-wrapper" class="shadow-lg dark-md sticky-top">
+        <!-- Ici commence la navbar à proprement parler. le "navbar-expand-md" permet de contrôler à quel breakpoint la navbar est entièrement affichée ou remplacée par le bouton-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow" id="navbar_up">
+          <!-- Logo iGEM Toulouse INSA-UPS 2020-->
+          <a class="navbar-brand" href="index.html">
+            <img class="d-inline-block align-center" src="png/IGEMINI_gris.png" width="50" height="50" alt="" /> Toulouse INSA-UPS
+          </a>
+          <!-- Bouton présent quand la navbar n'est pas étendue. Il appelle le contenu -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Ce qui permet d'afficher l'icône du bouton-->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Le contenu à proprement parler de la navbar-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- On commence à lister les onglets sous ce <ul> en faisant des <li>-->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <!-- On rajoute la classe "dropdown" si on souhaite un menu déroulant lorsqu'on clique...-->
+              <li class="nav-item dropdown">
+                <!-- ...Et les classes ci-dessous pour afficher et faire marcher ce bouton (petite flèche vers le bas) correctement-->
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Team
+                </a>
+                <!-- Ce qui s'affiche dans le menu déroulant est mis dans ce div avec la classe "dropdown-menu" et un label pour identifier quel menu déroulant à afficher-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <!-- Les différents items dans ce menu ont pour classe "dropdown-item" dans des balises <a>-->
+                  <!-- Sous-menu Team-->
+                  <a class="dropdown-item" href="Team_members.html">Team members</a>
+                  <a class="dropdown-item" href="Attributions.html">Attributions</a>
+                  <a class="dropdown-item" href="Notebook.html">Notebook</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Project
+                </a>
+                <!-- Sous-menu Project-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a class="dropdown-item" href="Description.html">Description</a>
+                  <a class="dropdown-item" href="Design.html">Design</a>
+                  <a class="dropdown-item" href="Model.html">Modeling</a>
+                  <a class="dropdown-item" href="Experiments.html">Experiments</a>
+                  <a class="dropdown-item" href="Results.html">Results</a>
+                  <a class="dropdown-item" href="Contribution.html">Contribution</a>
+                  <a class="dropdown-item" href="Engineering.html">Engineering</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Entrepreneurship
+                </a>
+                <!-- Sous-menu Entrepreneurship-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown3">
+                  <a class="dropdown-item" href="Implementation.html">Implementation</a>
+                  <a class="dropdown-item" href="Proof_of_Concept.html">Proof of Concept</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Parts.html">Parts</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Human Practices
+                </a>
+                <!-- Sous-menu Human Practices-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown4">
+                  <a class="dropdown-item" href="Human_Practices.html">Overview</a>
+                  <a class="dropdown-item" href="Integrated.html">Integrated Human Practices</a>
+                  <a class="dropdown-item" href="Education.html">Science Communication</a>
+                  <a class="dropdown-item" href="Contribution.html">Contribution</a>
+                  <a class="dropdown-item" href="Engineering.html">Engineering Success</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Safety.html">Safety</a>
+              </li>
+              <!-- Si on souhaite une séparation physique entre deux items:
+              <div class="dropdown-divider"></div> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- FIN DU MENU-->
+      <!-- DÉBUT container-fluid -->
+      <div class="container-fluid">
+        <div class="row" >
+          <!-- DÉBUT SIDEBAR-->
+          <div id="Tab-wrapper" class="col-3 col-lg-2 d-none d-sm-block">
+            <nav id="sidebar" class="navbar flex-column col-3 col-lg-2 px-n2 mt-3">
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link noir" href="#Titre1">Titre 1</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link noir ml-2" href="#Sous-titre1-1">Sous-titre super super long 1</a>
+                  <a class="nav-link noir ml-2 my-1" href="#Sous-titre1-2">Sous-titre 2</a>
+                  <a class="nav-link noir ml-2 my-1" href="#">Sous-titre 3</a>
+                </nav>
+                <a class="nav-link noir" href="#">Titre 2</a>
+                <a class="nav-link noir" href="#">Titre 3</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link noir ml-2 my-1" href="#item-3-1">Sous-titre 1</a>
+                  <a class="nav-link noir ml-2 my-1" href="#item-3-2">Sous-titre 2</a>
+                </nav>
+              </nav>
+            </nav>
+          </div>
+          <!-- Fin SIDEBAR-->
+          <!-- DÉBUT Real content-->
+          <div data-spy="scroll" data-target="#sidebar"  data-offset="0" class="col col-sm-9 col-lg-10 overflow-auto mt-3">
+            <h1 id="Titre1">Titre 1</h1>
+            <h2 id="Sous-titre1-1">Sous-titre 1</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+            </p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+            </p>
+            <h2 id="Sous-titre1-2">Sous-titre 2</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+            </p>
+          </div>
+          <!-- Fin Real content-->
+          <!-- Fermeture row-->
+        </div>
+        <!-- Fermeture container-fluid-->
+      </div>
+      <!-- Fermeture content-->
+    </div>
+    <!-- Fermeture globalWrapper-->
+  </div>
+
 
 </body>
 

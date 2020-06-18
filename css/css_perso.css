@@ -1,7 +1,62 @@
-/* Pour le spyscroll*/
-body{
-  position: relative;
+@font-face {
+  font-family: Quicksand;
+  src:url(fonts/Quicksand/Quicksand-VariableFont_wght.ttf), url(fonts/Quicksand/static/Quicksand-Regular.ttf);
 }
+
+body{
+  /* Pour le spyscroll*/
+  position: relative;
+/* Importation de la police*/
+  font-family: Quicksand;
+  font-variation-settings: 'wght' 410;
+}
+
+/*Technique pour le scrollspy quand les titres buguent*/
+/*h1,h2,h3{
+  padding-top: 5em;
+  margin-top: -5em;
+}*/
+
+h1{
+border-bottom: 2px solid #c5cbdd;
+padding-bottom: 3px;
+}
+
+/* Charte couleurs wiki*/
+.bleu{
+  color: #4e5eaa;
+}
+.bg-bleu{
+  background-color: #4e5eaa;
+}
+.jaune{
+  color: #edd690;
+}
+.bg-jaune{
+  background-color: #edd690;
+}
+.gris{
+  color: #c5cbdd;
+}
+.bg-gris{
+  background-color: #c5cbdd;
+}
+
+.violet{
+  color:#c97ab7;
+}
+.bg-violet{
+  background-color: #c97ab7;
+}
+
+.noir{
+  color: #111111;
+}
+
+.bg-noir{
+  background-color: #111111;
+}
+
 
 /* Pour justifier le texte par défaut*/
 p{
@@ -14,16 +69,31 @@ p{
   text-align: center;
 }
 */
+/* Bannière supérieure avec le fond spatial*/
+.banner{
+height: 80px;
+background: url('../jpg/cut_banner.jpg') center repeat-x;
+}
 
-/*Technique pour le scrollspy quand les titres buguent*/
-h1,h2,h3{
-  padding-top: 60px;
-  margin-top: -60px;
+/*Pour mettre le fond de la bonne couleur*/
+#content{
+  background-color: #EEEEEE;
 }
 
 /* Pour fixer le menu latéral sur le côté*/
 #sidebar{
   position: fixed;
+}
+
+#sidebar a{
+  padding: 0.5rem 0rem;
+}
+
+/* Pour changer l'aspect du titre ou sous-titre de la sidebar quand sélectionné*/
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #007bff;
+  background-color: inherit;
 }
 
 /* Animation du casque qui apparaît au passage de la souris */
