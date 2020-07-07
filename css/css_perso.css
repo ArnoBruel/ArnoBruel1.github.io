@@ -69,6 +69,8 @@ p{
   text-align: center;
 }
 */
+
+
 /* Bannière supérieure avec le fond spatial*/
 .banner{
 height: 80px;
@@ -94,6 +96,22 @@ background: url('../jpg/cut_banner.jpg') center repeat-x;
 .nav-pills .show > .nav-link {
   color: #007bff;
   background-color: inherit;
+}
+
+#team_member_description p{
+}
+.team_member_selector{
+  cursor: pointer;
+}
+
+.team_member_selector + p{
+  display: none;
+}
+.team_member_selector:hover + p{
+  display: block;
+  /*position: absolute;
+  top: 100px;
+  left: 100px;*/
 }
 
 /* Animation du casque qui apparaît au passage de la souris */
