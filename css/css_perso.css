@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Quicksand;
+  font-family: 'Quicksand';
   src:url(fonts/Quicksand/Quicksand-VariableFont_wght.ttf), url(fonts/Quicksand/static/Quicksand-Regular.ttf);
 }
 
@@ -7,7 +7,7 @@ body{
   /* Pour le spyscroll*/
   position: relative;
 /* Importation de la police*/
-  font-family: Quicksand;
+  font-family: 'Quicksand';
   font-variation-settings: 'wght' 410;
 }
 

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.css" />
   <!-- Optional JavaScript -->
   <!-- jQuery first, Bootstrap bundle JS -->
-  <script src="js/jquery-3.5.0.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <!-- Css personnel-->
   <link rel="stylesheet" href="css/css_perso.css" />
@@ -22,92 +22,194 @@
       <!-- DÉBUT container-fluid -->
       <div class="container-fluid">
         <h1 id="model">Model</h1>
-        <p>Our project to produce vitamin A and flavors by <em>Saccharomyces Cerevisiae</em> in space thanks to a coculture with <em>Clostridium Ljungdahlii</em> rapidly raises complex issues in terms of yield, flux and feasibility of our system. Naturally one way to answer these questions was to model our system.</p>
+        <p>Our coculture project in space between <em>Saccharomyces Cerevisiae</em> and <em>Clostridium Ljungdahlii</em> is ambitious and rapidly raises many questions. In terms of feasibility, yield and flux, many features of our system are still unknown. Naturally, one way to answer these questions is to model our system using genome-scale metabolic models. We use the Flux Balance Analysis (FBA) method and work on cobrapy that references many useful predefined programs. A notebook is regularly updated via the jupyter notebook tool throughout the modeling process.
+        </p>
+        <p>To work on each of our microorganisms, we retrieve each model from a database. These models regroup the genes, metabolites and reactions of the microorganism, which are articulated in a matrix called the S matrix.<br>
+          Our model of <em>Clostridium Ljungdahlii</em> is iHN637(4) and references 637 genes, 698 metabolites and 785 reactions. Our model of <em>Saccharomyces Cerevisiae</em> is iMM904 and references 905 genes, 1226 metabolites and 1577 reactions.
+        </p>
         <h2 id="constraints">Constraints</h2>
-        <p>The first step, before to ask anything to our models, is to resume all our constraints of our systems that will be applied to our models. So, in a space culture we get few constraints:</p>
+        <p>The first step is to recap all the constraints of our system that will be applied to the models. In a space coculture we have a few constraints:
+        </p>
         <ul>
-          <li>No carbohydrates as carbon source</li>
-          <li>CO2 as carbon source</li>
-          <li>H2 as energy source</li>
-          <li>A minimum culture medium with the fewest compound possible.</li>
-        </ul>
-        <h2 id="questioning">Questioning</h2>
-        <p>The plan of our system can is constituted of different questions, which must be the simplest, in order to have a precise answer.</p>
-        <ol>
           <li>
-            <p>What is the most suitable minimal culture medium within constraints?<br>
-              Our project is in a spaceship and the resources are very limited so we must know the minimum medium that we need to make our coculture work.</p>
+            <p>No carbohydrates as carbon source.<br>
+              As astronauts cannot bring sugar to feed our process for five years or more.
+            </p>
+          </li>
+          <li>
+            <p>CO<sub>2</sub> as carbon source.<br>
+             Our carbon source will indeed be the carbon dioxide contained in the spaceship and retrieved from the air exhaled by the astronauts.
+            </p>
+          </li>
+          <li>
+            <p>O<sub>2</sub> as electron acceptor.<br>
+              O<sub>2</sub> is the electron acceptor that allows the respiration of our yeast .
+            </p>
+          </li>
+          <li>
+            <p>H<sub>2</sub> as energy source.<br>
+              Dihydrogen constitutes our source of electrons. It is extracted from water electrolysis.
+            </p>
+          </li>
+          <li>
+            <p>A minimum culture medium with the fewest compounds possible.<br>
+              The astronauts cannot bring many compounds with them and even if they could, these compounds will eventually decay over time. Therefore, it is very important to minimize the amount of compounds in our medium as much as possible.
+            </p>
+          </li>
+        </ul>
+        <p>Constraints such as the uptake of CO<sub>2</sub>, H<sub>2</sub> and O<sub>2</sub> are fixed at the input of the model and are taken from the literature. All the values are expressed in mmol/gDW/h.
+        </p>
+        <h2 id="questioning">Questioning</h2>
+        <p>Our plan is then broken down into several parts and each part can be answered by a simple question that will be asked to our model.
+        </p>
+        <ol>
+          <li>What is the most suitable minimal culture medium within constraints?<br>
+            Our project is in a spaceship and the resources are very limited, so we must know the minimum medium that we need to make our coculture work.
+          </li>
+        </ol>
+        <p>The program that we use to answer this question is minimal_medium, with this command we must set the growth rate that we want to reach. As a result, the program outputs a list of compounds along with their required quantities. For the development of our process, we only want at first a qualitative analysis of the growing medium. Thus thanks to the models, we will be able to know which compounds are mutual and necessary to both microorganisms.
+        </p>
+        <ol start="2">
+          <li>What is the nutrient ratio required for the growth of <em>C. ljungdahlii</em>?
+          </li>
+        </ol>
+        <p>Our constraints are:
+        </p>
+        <ul>
+          <li>H<sub></sub> as energy source
+          </li>
+          <li>CO<sub>2</sub> as carbon source
+          </li>
+          <li>Objective function: growth
+          </li>
+          <li>model: iHN637
+          </li>
+        </ul>
+        <p>Thanks to the literature, we were able to recover the uptakes of <em>C.ljungdahlii</em> in H<sub>2</sub> and CO<sub>2</sub>. By optimizing the growth rate and observing it in relation to the uptakes of H<sub>2</sub> and CO<sub>2</sub> we can observe the consumption ratios H2 over CO2 for which <em>C.ljungdahlii</em> is able to grow.
+        </p>
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>It appears that <em>C.ljungdahlii</em> can grow when it takes in 2 to 2.9 times more dihydrogen than carbon dioxide. Gas flows corresponding to these ratios can then be set up.
+        </p>
+        <ol start="3">
+          <li>How much carbon products can C. ljungdahlii make?<br>
+            What is the theoretical maximum yield of acetate and ethanol in function of μ? In order to know if the production of carbon source of C. ljungdahlii is enough to allow S. cerevisiae to grow.
+          </li>
+        </ol>
+        <p>What is the theoretical maximum yield of acetate in relation to μ?<br>
+          Our constraints are:
+        </p>
+        <ul>
+          <li>H<sub>2</sub> as energy source
+          </li>
+          <li>CO<sub>2</sub> as carbon source
+          </li>
+          <li>Objective function: acetate
+          </li>
+          <li>model: iHN637
+          </li>
+        </ul>
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>In this figure, we asked our model to maximize the acetate production according to the growth rate and the dihydrogen consumption. We can observe that the acetate production is coupled with growth and that the more it consumes dihydrogen the more it grows, which leads to an increasing acetate production.
+        </p>
+        <p>What is the theoretical maximum yield of ethanol in function of μ<br>
+          Our constraints are:
+        </p>
+        <ul>
+          <li>H<sub>2</sub> as energy source
+          </li>
+          <li>CO<sub>2</sub> as carbon source
+          </li>
+          <li>Objective function: ethanol
+          </li>
+          <li>model: iHN637
+          </li>
+        </ul>
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>In the same way as with acetate, ethanol production is plotted as a function of growth rate and dihydrogen uptake. The ethanol production is not necessarily coupled with growth, <em>C. ljungdahlii</em> can grow without producing any ethanol. To synthetize ethanol, the bacteria must consume a little more dihydrogen.
+        </p>
+        <ol start="4">
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>This graph shows the production balance between acetate and ethanol, for both molecules the production is coupled with the consumption of dihydrogen.
+        </p>
+          <li>How fast does S. cerevisiae grow on these products as carbon source?<br>
+            What is the theoretical maximum yield of μ depending on the acetate and ethanol production.
+          </li>
+        </ol>
+        <p>What is the theoretical maximum yield of μ depending on the acetate production?<br>
+          In order to know how fast S. cerevisiae can theoretically grow with the acetate production of C. Ljungdahlii as uptake.<br>
+          Our constraints are:
+        </p>
+        <ul>
+          <li>No carbohydrate sources
+          </li>
+          <li>O<sub>2</sub> as electron acceptor for respiration
+          </li>
+          <li>acetate as carbon source
+          </li>
+          <li>Objective function: biomass
+          </li>
+          <li>model: iMM904
+          </li>
+        </ul>
+        <p>Our model is then asked to maximize the growth of S. Cerevisiae as a function of oxygen and acetate consumption.
+        </p>
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>This plot shows that the growth rate will be maximized for an acetate consumption over oxygen consumption ratio equal to 0.8. This means that a high uptake of acetate does not lead to a high growth rate.
+        </p>
+        <p>What is the theoretical maximum yield of μ depending on the ethanol production.<br>
+          In order to know how fast S. cerevisiae can theoretically grow with the ethanol production of C. Ljungdahlii as uptake.<br>
+          Our constraints are:
+        </p>
+        <ul>
+          <li>No carbohydrate sources
+          </li>
+          <li>O<sub>2</sub> as electron acceptor for respiration
+          </li>
+          <li>ethanol as carbon source
+          </li>
+          <li>Objective function: biomass
+          </li>
+          <li>model: iMM904
+          </li>
+        </ul>
+        <p>In the same way as acetate but with ethanol instead.
+        </p>
+        <p><em><strong>Graph</strong></em>
+        </p>
+        <p>This plot is very different from the acetate one. It shows that from a certain ethanol uptake, the growth rate will increase at the same time it is always necessary to consume oxygen.
+        </p>
+        <ol start="5">
+          <li>
+            <p>How much CO<sub>2</sub> does S. cerevisiae produce for C. ljungdahlii?<br>
+              What is the theoretical maximum yield of CO<sub>2</sub> output by S. cerevisiae? The theoretical maximum yield of CO<sub>2</sub> output by S.Cerevisiae that will become an input of C.Ljungdahlii.
+            </p>
+          </li>
+          <li>
+            <p>What is the yield of our molecules of interest that can be produced by S. cerevisiae?<br>
+              At which scale can we expect to produce our compounds of interest? Our pathway of interest is the mevalonate pathway in charge of providing the precursors of all our interest molecules.</p>
             </li>
             <li>
-              <p>How much carbon products can C. ljungdahlii make?<br>
-                Which is the theoretical maximum yield of acetate and ethanol in function of μ? In order to know if the production of carbon source of C. ljungdahlii is enough to allow S. cerevisiae to growth.</p>
-              </li>
-            </ol>
-            <p>Which is the theoretical maximum yield of acetate in function of μ?<br>
-              Our constraints are:</p>
-              <ul>
-                <li>No carbohydrate sources</li>
-                <li>H2 as energy source</li>
-                <li>CO2 as carbon source</li>
-                <li>Objective function: acetate</li>
-                <li>model: iHN637</li>
-              </ul>
-              <p>Which is the theoretical maximum yield of ethanol in function of μ<br>
-                Our constraints are:</p>
-                <ul>
-                  <li>No carbohydrate sources</li>
-                  <li>H2 as energy source</li>
-                  <li>CO2 as carbon source</li>
-                  <li>Objective function: ethanol</li>
-                  <li>model: iHN637</li>
-                </ul>
-                <ol start="3">
-                  <li>How fast does S. cerevisiae grow on these products as carbon source?<br>
-                    Which is the theoretical maximum yield of μ depending on the acetate and ethanol production.</li>
-                  </ol>
-                  <p>Which is the theoretical maximum yield of μ depending on the acetate production?<br>
-                    In order to know how fast at maximum will growth S. cerevisiae with the acetate production of C. Ljungdahlii as uptake.<br>
-                    Our constraints are:</p>
-                    <ul>
-                      <li>No carbohydrate sources</li>
-                      <li>O2 as electron acceptor for respiration (3.5)</li>
-                      <li>acetate as carbon source</li>
-                      <li>Objective function: biomass</li>
-                      <li>model: yeast_7.6.xml</li>
-                    </ul>
-                    <p>Which is the theoretical maximum yield of μ depending on the ethanol production.<br>
-                      In order to know how fast at maximum will growth S. cerevisiae with the ethanol production of C. Ljungdahlii as uptake.<br>
-                      Our constraints are:</p>
-                      <ul>
-                        <li>No carbohydrate sources (0)</li>
-                        <li>O2 as electron acceptor for respiration (3.5)</li>
-                        <li>ethanol as carbon source (5)</li>
-                        <li>Objective function: biomass</li>
-                        <li>model: yeast_7.6.xml</li>
-                      </ul>
-                      <ol start="4">
-                        <li>
-                          <p>How much CO2 does S. cerevisiae produce for C. ljungdahlii?<br>
-                            Which is the theoretical maximum yield of CO2 in output of S. cerevisiae? The theoretical maximum yield of CO2 in output of S.Cerevisiae which will become an input of C.Ljungdahlii</p>
-                          </li>
-                          <li>
-                            <p>What is the yield of our interest molecules that can be produced by S. cerevisiae ?<br>
-                              At which scale can we expect to produce our interest compounds? Our interest pathway is the mevalonate pathway in charge to provide the precursors of all our interest molecules.</p>
-                            </li>
-                            <li>
-                              <p>this system work in its globalist and what will be its characteristics ?</p>
-                            </li>
-                          </ol>
-                          <blockquote>
-                            <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
-                          </blockquote>
-                        </div>
-                        <!-- Fermeture content-->
-                      </div>
-                      <!-- Fermeture globalWrapper-->
-                    </div>
+              <p>This system works in its globalist and what will be its characteristics?</p>
+            </li>
+          </ol>
+          <p>(1) Analysis of the yeast short-term Crabtree effect and its origin by Hargman, Torbjörn and Piskur ; The Febs Journal ; August 2014 ; doi:10.1111/febs.13019</p>
+          <p>(2) Effects of Oxygen Supply on Yeast Growth and Metabolism in Continuous Fermentation by HIROSHI KURIYAMA AND HARUMI KOBAYASHI National Institute of Bioscience and Human-Technology ; February 1998</p>
+          <p>(3) Enhancing CO<sub>2</sub>-valorisation using Clostridium autoethanogenum for sustainable fuel and chemicals production by James K. Heffernan, Kaspar Valgepea, Renato de Souza Pinto Lemgruber, Isabella Casini, Manuel Plan, Ryan Tappel, Sean D. Simpson, Michael Köpke, Lars K. Nielsen, Esteban Marcellin; doi: <a href="https://doi.org/10.1101/2020.01.23.917666">https://doi.org/10.1101/2020.01.23.917666</a></p>
+          <p>(4) Characterizing Acetogenic Metabolism Using a Genome-Scale Metabolic Reconstruction of Clostridium Ljungdahlii by <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Nagarajan+H&amp;cauthor_id=24274140">Harish Nagarajan</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Sahin+M&amp;cauthor_id=24274140">Merve Sahin</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Nogales+J&amp;cauthor_id=24274140">Juan Nogales</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Latif+H&amp;cauthor_id=24274140">Haythem Latif</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lovley+DR&amp;cauthor_id=24274140">Derek R Lovley</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Ebrahim+A&amp;cauthor_id=24274140">Ali Ebrahim</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Zengler+K&amp;cauthor_id=24274140">Karsten Zengler</a> ; DOI: <a href="https://doi.org/10.1186/1475-2859-12-118">10.1186/1475-2859-12-118</a></p>
+          <p>(5) Redox responses in yeast to acetate as the carbon source by Karyl I. Minard and L. McAlister-Henn ; Arch Biochem Biophys. 2009 March 1; DOI: <a href="https://doi.org/10.1016/j.abb.2008.12.014">10.1016/j.abb.2008.12.014</a></p>
+          <p>(6) Role of Transcriptional Regulation in Controlling Fluxes in Central Carbon Metabolism of Saccharomyces cerevisiae, a Chemostat Culture Study by Pascale Daran-Lapujade, Mickel L.A. Jansen, Jean-Marc Daran , Walter van Gulik , Johannes H. de Winde, Jack T. Pronk ; June 15, 2020</p>
+        </div>
+        <!-- Fermeture content-->
+      </div>
+      <!-- Fermeture globalWrapper-->
+    </div>
 
 
-                  </body>
+  </body>
 
-                  </html>
+  </html>
