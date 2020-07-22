@@ -11,6 +11,17 @@ body{
   font-variation-settings: 'wght' 410;
 }
 
+/*Enlever le logo iGEM et Team:Toulouse INSA-UPS*/
+#top_title{
+  display: none;
+}
+
+/* Rectifier la police des HQ_page p*/
+#HQ_page p{
+  font-family: 'Quicksand', sans-serif;
+  font-size: inherit;
+}
+
 /*Technique pour le scrollspy quand les titres buguent*/
 /*h1,h2,h3{
   padding-top: 5em;
@@ -72,14 +83,20 @@ p{
 
 
 /* Bannière supérieure avec le fond spatial*/
-.banner{
-height: 80px;
-background: url('../jpg/cut_banner.jpg') center repeat-x;
+#banner-container{
+  height: 80px;
+  overflow: hidden;
+  background-color: #111000;
+}
+
+#banner{
+  margin: -800px -100px 0px -100px;
 }
 
 /*Pour mettre le fond de la bonne couleur*/
 #content{
   background-color: #EEEEEE;
+  width:auto;
 }
 
 /* Pour fixer le menu latéral sur le côté*/
@@ -96,6 +113,45 @@ background: url('../jpg/cut_banner.jpg') center repeat-x;
 .nav-pills .show > .nav-link {
   color: #007bff;
   background-color: inherit;
+}
+
+/**
+ * ----------------------------------------
+ * animation rotate-scale-up
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.rotate-scale-up {
+        -webkit-animation: rotate-scale-up 600s linear infinite both;
+                animation: rotate-scale-up 600s linear infinite both;
 }
 
 #team_member_description p{

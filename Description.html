@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Description</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, Bootstrap bundle JS -->
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <!-- Css personnel-->
+  <link rel="stylesheet" href="css/css_perso.css" />
+</head>
+<body data-spy="scroll" data-target="#sidebar">
+  <!-- DÉBUT globalWrapper-->
+  <div id="globalWrapper">
+    <!-- DÉBUT content-->
+    <div id="content" class="mw-body" role="main">
+      <!-- DÉBUT container-fluid -->
+      <div class="container-fluid">
+        <h1 id="description">Description</h1>
+        <h2 id="our-project">Our project</h2>
+        <p><strong>SPACE</strong><br>
+          Toulouse is the center of the European aerospace industry, and we wanted to combine space and synthetic biology.<br>
+          Space travels are getting longer and longer, but how will we be able to transport all the food and vitamins necessary for our survival in space?
+        </p>
+        <p>Good nutrition is a crucial point for astronauts. So we decided to produce provitamin A, since it is one of the least stable vitamins. (1, 2)
+        </p>
+        <p>Another essential part of a nutritious meal is taste. Due to the lack of gravity, astronaut’s taste can be altered. We wanted to give astronauts the option to choose between different flavors: natural yeast flavor, sweet rose, or lemon taste.
+        </p>
+        <p><strong>Available resources</strong><br>
+          In space resources are scarce, thus everything must be recycled from exhaled CO<sub>2</sub> to the astronauts’ urine (3). Therefore, it is crucial that our system can be implemented in the already existing recycling system.
+        </p>
+        <div class="text-center"><img src="png/recycling.png" alt=""></img></div>
+        <p><strong>Urine</strong><br>
+          Urine is distilled and the resulting volatile components are returned to Earth. But this system is still under development, hence nitrogen compounds are not currently reclaimed from urine aboard the ISS, (4). Most microorganisms need nitrogen in order to grow, and urine contains urea, (5). For this reason we decided to use urine as our source of nitrogen.
+        </p>
+        <p><strong>H<sub>2</sub></strong><br>
+          Product water in a space station is electrolyzed in order to produce oxygen and dihydrogen. The former is used for breathing, while dihydrogen is vented overboard, and therefore not used, (3). So we decided to use H<sub>2</sub> in our system.
+        </p>
+        <h2 id="coculture">Coculture</h2>
+        <p>We chose an acetogenic bacterium as it can grow on H<sub>2</sub> and CO<sub>2</sub>: <em>Clostridium ljungdahlii PETC</em>.  This bacterium is anaerobic and can be aerotolerant. But unfortunately it cannot be eaten, so to use this resource we have to do a coculture system with a GRAS and edible well-characterized microorganism.</p>
+        <p>We engineered yeast in order to produce provitamin A, and different taste. Yeast is a GRAS microorganism that is sufficiently characterized.</p>
+        <h2 id="provitamin-a">Provitamin A</h2>
+        <p>Vitamin A is one of the least stable vitamins, and is essential for vision and cellular division(6, 7).</p>
+        <p>CrtYb(ek)I is a fusion protein that allows the production of β-carotene. (8)</p>
+        <p>Hmg1 catalyzes the conversion of HMG-CoA to mevalonate. It is the rate-limiting enzyme of the sterol biosynthesis pathway (9). So by producing it, we can increase the production of provitamin A.</p>
+        <h2 id="flavors">Flavors</h2>
+        <p>Taste is one of our basic human senses, and it allows us to enjoy food. In space, taste buds can be altered due to the lack of gravity, thus the perception of taste can be different in space. (10) For this reason, we wanted to let astronauts choose which flavor they would rather have when taking their vitamin A-enriched yeast.<br>
+          Besides yeast’s natural flavor, we engineered yeast in order to produce two different flavors: sweet rose and lemon.
+        </p>
+        <p>We decided to use an optogenetic system so that the astronauts can choose the flavor that most appeals to them. Thus, the flavors will be regulated by a red and a blue LED light.</p>
+        <h3 id="sweet-rose">Sweet rose</h3>
+        <p>In order to make yeast tastes like a sweet rose, we engineered it by introducing the production of two molecules: geraniol and brazzein.<br>
+          <strong>Geraniol</strong> is present in some plants such as rose and lemongrass, it is approved by FDA for the fragrance and food industry. (11)<br>
+          <strong>Brazzein</strong> is a sweet tasting peptide, it is 2000 sweeter than sucrose. (12)
+        </p>
+        <h3 id="lemon">Lemon</h3>
+        <p><strong>Limonene</strong> is used as a component of flavorings and fragrances. Limonene is produced by <em>limonene synthase</em>.  (13)</p>
+        <div class="text-center"><img src="png/molecule_production.png" alt=""></img></div>
+        <p>Two out of these three molecules, geraniol and limonene, share a common pathway with the synthesis of provitamin A. The common precursor is geranyl-PP. The synthesis of this molecule, geranyl-PP, will be boosted with the Hmg1 gene.</p>
+        <h2 id="our-system">Our system</h2>
+        <div class="text-center"><img src="png/system.png" alt=""></img></div>
+        <p>We designed a coculture system with <em>C. ljungdahlii</em> and <em>S. cerevisiae</em>. The electrolysis of water produces dihydrogen and dioxygen. The first compound is consumed by the bacteria, which produces ethanol and acetate. These two products are used by the yeast along with the dioxygen and urea obtained from urine.<br>
+          Yeast produces CO<sub>2</sub> (which will be used <em>C. ljungdahlii</em>), provitamin A and flavors, that will be consumed by astronauts.
+        </p>
+        <h2 id="brainstorming">Brainstorming</h2>
+        <p>Before settling our project, we spent almost 4 months brainstorming different ideas. Each of the 8 members of the team came up with a unique idea, from the treatment of toxic red mud to the synthesis of spider silk or a biosensor for cancer treatment.</p>
+        <p>As weeks went by, we started focusing on some of our ideas while slowly discarding the others. But we also merged some of our ideas together.<br>
+          The combination of these ideas resulted in our project: iGEMINI.
+        </p>
+        <p>[brainstorming.jpg]</p>
+        <h3 id="brainstorming-timeline">Brainstorming timeline</h3>
+        <p>/////<br>
+          <strong>Nano-plastic depollution:</strong> Water pollution is a real emergency and unfortunately plastic is a very common compound found in sea waters. This project was about synthetizing big plastics particles from nano-plastics in the sea waters. The idea was to create a device capable of aggregating the particles into bigger ones. This would have made them collectable and therefore recyclable.
+        </p>
+        <p><strong>Red mud treatment:</strong> Red muds receive many toxic waste from aluminum production. Theses waste muds are essentially minerals and are harmful to the environment. These muds can be detoxicated and the minerals could be collected for future use by decreasing the pH thanks to microorganisms.
+        </p>
+        <p><strong>Space:</strong> Our region is known all over the world for being the European capital of aerospace. Bridging the gap between aerospace and synthetic biology is an innovating challenge and we would represent the very heart of our region.
+        </p>
+        <p><strong>Vitamin production:</strong> Many populations in the world suffer from Vitamin D deficiency, the idea for this project was to create bacteria capable of synthetizing vitamin D from a low-resource environment.
+        </p>
+        <p><strong>Sharka disease:</strong> One the most infamous and devastating plant diseases is “sharka”, also known as the Plum pox virus. It spreads rapidly from field to field, and the French legislation even states that if over 5% of the field is infected, the whole plantation needs to be burnt down. It affects various species of plants and is propagated by aphids. The project consisted in creating a device that could attract aphids, detect if the plant was infected and inform the farmer.
+        </p>
+        <p><strong>Spider silk production:</strong> Spider silk is one of the most malleable and resistant materials. Many objects are made from silk, but its production is very expensive and time-consuming. We thought about using microorganisms to synthetize spider silk and give it new properties.
+        </p>
+        <p><strong>Algae treatment:</strong> The idea originated from the accumulation of algae on beaches. We thought about two different strategies: either eliminate the algae from the beaches or reuse the biomass, using microorganisms. The first strategy did not seem ethically viable, and we could not think of any interesting ways of reusing the biomass. This project was therefore abandoned.
+        </p>
+        <p><strong>Tumoral biodetector:</strong> This idea was abandoned because of its high complexity, even though it seemed quite interesting. For this idea we were thinking about creating a tumoral biodetector to help treat or diagnose cancer.
+        </p>
+        <p>//////<br>
+          <strong>Nano-plastic depollution:</strong> Several members continued the research on the feasibility of this project. However, it raised many issues, some of which appeared unsolvable to us. The project was therefore abandoned, and the team moved forward.
+        </p>
+        <p><strong>Red mud treatment:</strong> The project seemed good and feasible by our team but most of us did not seem as interested in this topic as in the others. Thus, this project soon became memory.
+        </p>
+        <p><strong>Vitamin production:</strong> The project was accepted by all, but we found that something was missing in the idea of vitamin production, so we thought about optogenetics as a regulation for the choice of our vitamin.
+        </p>
+        <p><strong>Electrosynthesis:</strong> A member of our team had the idea of using electrosynthesis. This process consists in using electricity as energy source for microorganisms. The idea is to use water electrolysis to feed microorganism with H<sub>2</sub>. At this point, it was not enough to be a full and definitive project; however, it could be paired with another one, so we kept it in our minds.
+        </p>
+        <p>////////<br>
+          <strong>Space:</strong> After some researches, it appeared that the nutritional value of food in space decreases over time, and many deficiencies can affect astronauts. Thus, the space project was combined with the vitamin production project using optogenetics in order to let astronauts have a choice.
+        </p>
+        <p><strong>Spider silk production:</strong> There were many possible uses for spider silk, but we were interested in the idea of making artificial muscles with it. The project was very focused on mechanical issues, and even though many of us study at an engineering school, we are all biology students and our knowledge in this field was therefore quite limited. The whole team was skeptical about our lack of knowledge in mechanical engineering and this project was eventually abandoned.
+        </p>
+        <p>////////<br>
+          <strong>Sharka disease:</strong> We came up with a lot of ideas for this project such as releasing volatile aphid-attracting molecules to catch bugs in our device, and testing the presence of the virus. The detection system was supposed to incorporate a regulation system releasing a signal directly to an app used by the farmer.
+        </p>
+        <p><strong>Space:</strong> With the goal of producing nutrients in space, electrosynthesis was quickly grafted to the space project, as it allows the production of nutrients with the use of few resources. At this point, we still had to determine which vitamins we wanted to produce.
+        </p>
+        <p>///////
+        </p>
+        <p>The time were we had to settle for only one project eventually came, a few days after quarantine started. Everyone voted, and even though both projects seemed very interesting, we chose to work on the production of vitamins in space.
+        </p>
+        <p>/////
+        </p>
+        <p>At this time, our idea for the project was to use water electrolysis to feed bacteria, which will then produce a substrate for another organism that could synthesize our vitamins. After many researches we found out that after spending several days in space, the astronauts had a loss of taste and many of them wanted to eat sweeter or spicier.
+        </p>
+        <p>Additionally, after discussing with experts and reading through bibliography, we found out that vitamin A deficiency could lead to long-term vision problems.
+        </p>
+        <p>Therefore, we decided to synthesize vitamin A and then give astronauts the chance to choose their preferred taste using an optogenetics regulation.
+        </p>
+        <p>/////
+        </p>
+        <p>Thanks to the literature, we found several microorganisms capable of electrosynthesis, but we needed one as resistant to oxygen as possible. <em>Clostridium Ljungdahlii</em> fitted perfectly with our list of preferred characteristics. But we also needed a microorganism that is able to grow on electrosynthesis products such as acetate, and is able to be eaten by astronauts. So we decided to use a yeast: <em>Saccharomyces Cerevisiae</em>.
+        </p>
+        <p>//////
+        </p>
+        <p>Researching about the production of different taste in yeast lead us towards many publications about beer. But we needed to find a taste that was not too complex to synthesize, had a good taste, and preferably had a common precursor with vitamin A. After studying different iGEM projects from different years, we decided to produce geraniol and limonene. We were not sure about the rose taste of geraniol, so we wanted to combine it with a sweet taste; this could be done by the production of a small peptide: brazzein.
+        </p>
+
+        <h2 id="covid-19">COVID-19</h2>
+        <p>This year, the world has been impacted by a global pandemic due to the coronavirus. Our team was formed in December so during the first months, we were able to meet in person for all the brainstorming sessions.<br>
+          But in March, France stated a mandatory stay-at-home order, and all universities were shut down.  We had to quickly adapt and start doing our weekly meetings and brainstorming sessions online. Getting access to the lab during the summer was uncertain, but we kept working hard on our project.<br>
+          As summer was getting closer and the pandemic seemed to be more contained in France, the social distancing restrictions were getting less strict. For this reason we were able to go into the lab in June. However we still followed many social distancing rules, such as wearing a mask at all times, keeping a safe distance as much as possible, often washing our hands…
+        </p>
+        <p>—Bibliography—<br>
+          1 - documentary « Alimenter notre avenir - La nutrition sur Terre et dans l’espace » de l’ESA (2009)<br>
+          2 - “Musculo-skeletal system: Bone and Muscle loss” ESA article<br>
+          <a href="https://www.dsm.com/markets/anh/en_US/Compendium/vitamin_basics/vitamin_stability.html">Vitamin stability</a><br>
+          3 - <a href="https://www.nasa.gov/pdf/396719main_WLMR_Educator_Guide.pdf">https://www.nasa.gov/pdf/396719main_WLMR_Educator_Guide.pdf</a><br>
+          4 - <a href="https://www.nasa.gov/pdf/146558main_RecyclingEDA(final)%204_10_06.pdf">https://www.nasa.gov/pdf/146558main_RecyclingEDA(final)%204_10_06.pdf</a><br>
+          5 -<br>
+          <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073076">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0073076</a><br>
+          6 - Tilman Grune, Georg Lietz, Andreu Palou, A. Catharine Ross, Wilhelm Stahl, Guangweng Tang, David Thurnham, Shi-an Yin, Hans K. Biesalski, <em>β</em>-Carotene Is an Important Vitamin A<br>
+          7 - Source for Humans, <em>The Journal of Nutrition</em>, Volume 140, Issue 12, December 2010, Pages 2268S–2285S, <a href="https://doi.org/10.3945/jn.109.119024">https://doi.org/10.3945/jn.109.119024</a><br>
+          8 - <a href="https://doi.org/10.1016/j.mec.2019.e00086" title="Persistent link using digital object identifier">https://doi.org/10.1016/j.mec.2019.e00086</a><br>
+          9 - <a href="https://www.uniprot.org/uniprot/P12683">https://www.uniprot.org/uniprot/P12683</a><br>
+          10 - <a href="https://www.scientificamerican.com/article/making-sense-of-taste/">https://www.scientificamerican.com/article/making-sense-of-taste/</a><br>
+          11 - <a href="http://2014.igem.org/Team:UGA-Georgia/Geraniol">http://2014.igem.org/Team:UGA-Georgia/Geraniol</a><br>
+          12 - <a href="https://www.uniprot.org/uniprot/P56552">https://www.uniprot.org/uniprot/P56552</a><br>
+          13 - <a href="http://2012.igem.org/Team:TU_Munich/Project/Limonene">http://2012.igem.org/Team:TU_Munich/Project/Limonene</a>
+        </p>
+      </div>
+      <!-- Fermeture content-->
+    </div>
+    <!-- Fermeture globalWrapper-->
+  </div>
+</body>
+
+</html>
