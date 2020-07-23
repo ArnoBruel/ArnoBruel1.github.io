@@ -19,6 +19,95 @@
   <div id="globalWrapper">
     <!-- DÉBUT content-->
     <div id="content" class="mw-body" role="main">
+      <div id="banner-container" class="container-fluid">
+        <a><img src="jpg/banner.jpg" id="banner" class="rotate-scale-up" alt=""/></a>
+      </div>
+      <!-- DÉBUT MENU-->
+      <div id="Menu-wrapper" class="shadow-lg dark-md">
+        <!-- Ici commence la navbar à proprement parler. le "navbar-expand-md" permet de contrôler à quel breakpoint la navbar est entièrement affichée ou remplacée par le bouton-->
+        <nav class="navbar navbar-expand-lg px-md-4 navbar-dark bg-dark shadow" id="navbar_up">
+          <!-- Logo iGEM Toulouse INSA-UPS 2020-->
+          <a class="navbar-brand" href="index.html">
+            <img class="d-inline-block align-center" src="png/IGEMINI_gris.png" width="50" height="50" alt="" /> Toulouse INSA-UPS
+          </a>
+          <!-- Bouton présent quand la navbar n'est pas étendue. Il appelle le contenu -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Ce qui permet d'afficher l'icône du bouton-->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Le contenu à proprement parler de la navbar-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- On commence à lister les onglets sous ce <ul> en faisant des <li>-->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <!-- On rajoute la classe "dropdown" si on souhaite un menu déroulant lorsqu'on clique...-->
+              <li class="nav-item dropdown">
+                <!-- ...Et les classes ci-dessous pour afficher et faire marcher ce bouton (petite flèche vers le bas) correctement-->
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Team
+                </a>
+                <!-- Ce qui s'affiche dans le menu déroulant est mis dans ce div avec la classe "dropdown-menu" et un label pour identifier quel menu déroulant à afficher-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <!-- Les différents items dans ce menu ont pour classe "dropdown-item" dans des balises <a>-->
+                  <!-- Sous-menu Team-->
+                  <a class="dropdown-item" href="Team_members.html">Team members</a>
+                  <a class="dropdown-item" href="Attributions.html">Attributions</a>
+                  <a class="dropdown-item" href="Notebook.html">Notebook</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Project
+                </a>
+                <!-- Sous-menu Project-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a class="dropdown-item" href="Description.html">Description</a>
+                  <a class="dropdown-item" href="Design.html">Design</a>
+                  <a class="dropdown-item" href="Model.html">Modeling</a>
+                  <a class="dropdown-item" href="Experiments.html">Experiments</a>
+                  <a class="dropdown-item" href="Results.html">Results</a>
+                  <a class="dropdown-item" href="Contribution.html">Contribution</a>
+                  <a class="dropdown-item" href="Engineering.html">Engineering</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Entrepreneurship
+                </a>
+                <!-- Sous-menu Entrepreneurship-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown3">
+                  <a class="dropdown-item" href="Implementation.html">Implementation</a>
+                  <a class="dropdown-item" href="Proof_of_Concept.html">Proof of Concept</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Parts.html">Parts</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Human Practices
+                </a>
+                <!-- Sous-menu Human Practices-->
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown4">
+                  <a class="dropdown-item" href="Human_Practices.html">Overview</a>
+                  <a class="dropdown-item" href="Integrated.html">Integrated Human Practices</a>
+                  <a class="dropdown-item" href="Education.html">Science Communication</a>
+                  <a class="dropdown-item" href="Contribution.html">Contribution</a>
+                  <a class="dropdown-item" href="Engineering.html">Engineering Success</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Safety.html">Safety</a>
+              </li>
+              <!-- Si on souhaite une séparation physique entre deux items:
+              <div class="dropdown-divider"></div> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- FIN DU MENU-->
       <!-- DÉBUT container-fluid -->
       <div class="container-fluid">
         <h1 id="description">Description</h1>
