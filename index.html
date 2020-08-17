@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-lg px-md-4 navbar-dark bg-dark shadow" id="navbar_up">
           <!-- Logo iGEM Toulouse INSA-UPS 2020-->
           <a class="navbar-brand" href="index.html">
-            <img class="d-inline-block align-center" src="png/IGEMINI_gris.png" width="50" height="50" alt="" /> Toulouse INSA-UPS
+            <img class="d-inline-block align-center" src="png/IGEMINI_blanc.png" width="50" height="50" alt="" /> Toulouse INSA-UPS
           </a>
           <!-- Bouton présent quand la navbar n'est pas étendue. Il appelle le contenu -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,7 +112,7 @@
       <div class="container-fluid">
         <div class="row" >
           <!-- DÉBUT SIDEBAR-->
-          <div id="Tab-wrapper" class="col-3 col-lg-2 d-none d-sm-block">
+          <!-- <div id="Tab-wrapper" class="col-3 col-lg-2 d-none d-sm-block">
             <nav id="sidebar" class="navbar flex-column col-3 col-lg-2 px-n2 mt-3">
               <nav class="nav nav-pills flex-column">
                 <a class="nav-link noir" href="#Titre1">Titre 1</a>
@@ -129,19 +129,47 @@
                 </nav>
               </nav>
             </nav>
-          </div>
+          </div> -->
+          <!-- class="col col-sm-9 col-lg-10 overflow-auto mt-3-->
           <!-- Fin SIDEBAR-->
           <!-- DÉBUT Real content-->
-          <div data-spy="scroll" data-target="#sidebar"  data-offset="0" class="col col-sm-9 col-lg-10 overflow-auto mt-3">
-            <h1 id="Titre1">Titre 1</h1>
-            <h2 id="Sous-titre1-1">Sous-titre 1</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-            </p>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-            </p>
-            <h2 id="Sous-titre1-2">Sous-titre 2</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-            </p>
+          <!-- !important class w-100 to take the whole width-->
+          <div class="w-100" data-spy="scroll" data-target="#sidebar"  data-offset="0">
+            <!-- Space carousel-->
+            <div id="home_carousel" class="container carousel slide" data-keyboard="true" data-ride="carousel" data-interval="false">
+              <!-- Left and right arrows-->
+              <ol class="carousel-indicators">
+                <li data-target="#home_carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#home_carousel" data-slide-to="1"></li>
+              </ol>
+              <!-- Actual content of the carousel-->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="bg-space d-flex flex-column justify-content-center">
+                    <img src="svg/IGEMINI_MONOCHROME_Blanc.svg" class="img-space" alt="">
+                    <h3 class="text-white text-center mx-3 mt-n3 mb-5">A coculture for yeast production in space </h3>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="bg-space d-flex justify-content-center">
+                    <video controls autoplay muted class="d-block w-100">
+                      <source src="mp4/Toulouse_Team_Presentation_Video.mp4" type="video/mp4" />
+                      <p>Votre navigateur ne prend pas en charge les vidéos HTML5.
+                          Voici <a href="mp4/Toulouse_Team_Presentation_Video.mp4">un lien pour télécharger la vidéo</a>.
+                      </p>
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev carousel_controls_height" href="#home_carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next carousel_controls_height" href="#home_carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
           <!-- Fin Real content-->
           <!-- Fermeture row-->

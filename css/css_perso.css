@@ -67,7 +67,27 @@ padding-bottom: 3px;
 .bg-noir{
   background-color: #111111;
 }
-
+/* spacebackground for Home page*/
+.bg-space{
+  background-image: url(../gif/home_background.gif);
+  /* Stretches the image to cover the whole screen*/
+  background-size: cover;
+  background-position: center;
+  /* Empirical size that mostly works*/
+  height: 75vh;
+}
+/* Logo in the middle of the carousel*/
+.img-space{
+  height: 73%;
+  width: auto;
+  margin: 10vh;
+}
+/* Height corrector to allow the use of the video control bar*/
+.carousel_controls_height{
+  height: 30%;
+  top:35%;
+  bottom: auto;
+}
 
 /* Pour justifier le texte par défaut*/
 p{
