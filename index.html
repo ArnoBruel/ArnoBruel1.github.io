@@ -19,16 +19,16 @@
   <div id="globalWrapper">
     <!-- DÉBUT content-->
     <div id="content" class="mw-body" role="main">
-      <div id="banner-container" class="container-fluid">
+      <div id="banner-container" class="container-fluid px-0">
         <a><img src="jpg/banner.jpg" id="banner" class="rotate-scale-up" alt=""/></a>
       </div>
       <!-- DÉBUT MENU-->
-      <div id="Menu-wrapper" class="shadow-lg dark-md">
+      <div id="Menu-wrapper" class="shadow-lg dark-md sticky-top">
         <!-- Ici commence la navbar à proprement parler. le "navbar-expand-md" permet de contrôler à quel breakpoint la navbar est entièrement affichée ou remplacée par le bouton-->
         <nav class="navbar navbar-expand-lg px-md-4 navbar-dark bg-dark shadow" id="navbar_up">
           <!-- Logo iGEM Toulouse INSA-UPS 2020-->
           <a class="navbar-brand" href="index.html">
-            <img class="d-inline-block align-center" src="png/IGEMINI_blanc.png" width="50" height="50" alt="" /> Toulouse INSA-UPS
+            <img class="d-inline-block align-center" src="png/IGEMINI_blanc.png" width="50" width="50" alt="" /> Toulouse INSA-UPS
           </a>
           <!-- Bouton présent quand la navbar n'est pas étendue. Il appelle le contenu -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -136,7 +136,7 @@
           <!-- !important class w-100 to take the whole width-->
           <div class="w-100" data-spy="scroll" data-target="#sidebar"  data-offset="0">
             <!-- Space carousel-->
-            <div id="home_carousel" class="container carousel slide" data-keyboard="true" data-ride="carousel" data-interval="false">
+            <div id="home_carousel" class="container-fluid px-0 carousel slide" data-keyboard="true" data-ride="carousel" data-interval="false">
               <!-- Left and right arrows-->
               <ol class="carousel-indicators">
                 <li data-target="#home_carousel" data-slide-to="0" class="active"></li>
@@ -174,6 +174,41 @@
           <!-- Fin Real content-->
           <!-- Fermeture row-->
         </div>
+        <!-- Start Footer-->
+        <!-- px-0 to cover the full screen-->
+        <footer class="container-fluid p-0" id="FOOTER">
+    			<div class="row bg-dark text-light py-3">
+    				<div class="col-10 offset-1 text-justify" id="FOOTER_CONTENT">
+    					<!-- start text -->
+    					<div id="DISCLAIMER">
+                <i>
+      						<p class="sponsor">The whole <b>Toulouse INSA-UPS team</b> would like to thank our sponsors. Especially:</p>
+      						<div id="SPONSORS_LIST" class="rounded-pill">
+                    <span><img src="logo/TBI.jpg" alt="TBI"></img></span>
+                    <span><img src="logo/catalyseur.jpg" alt="Fondation Catalyseur"></img></span>
+                    <span><img src="logo/CNES.png" alt="CNES"></img></span>
+                    <span><img src="logo/TWB.jpg" alt="TWB"></img></span>
+                    <span><img src="logo/adisseo.jpg" alt="Adisseo"></img></span>
+                    <span><img src="logo/CBI.png" alt="CBI"></img></span>
+                    <span><img src="logo/fondation insa.png" alt="Fondation INSA"></img></span>
+                    <span><img src="logo/FSI.jpg" alt="FSI"></img></span>
+                    <span><img src="logo/Logo-INRAE_Transparent.png" alt="INRAE"></img></span>
+      						</div>
+                  <br />
+      						<p>and many more. For futher information about our sponsors, please consult <b><u><a href="#">our Sponsors page</a></u></b>.</p>
+      						<hr>
+      						<p>The content provided on this website is the fruit of the work of the <b>Toulouse INSA-UPS</b> iGEM Team. As a deliverable for the iGEM Competition, it falls under the Creative Commons Attribution 4.0. Thus, all content on this wiki is available under the Creative Commons Attribution 4.0 license (or any later version). For futher information, please consult the  official website of Creative Commons.</p>
+      						<hr>
+      						<p>This website was designed with Bootstrap (4.4.1). Bootstrap is a front-end library of component for html, css and javascript. It relies on both Popper and jQuery. For further information, please consult the official website of Bootstrap.</p>
+      					</i>
+              </div>
+              <!-- DISCLAIMER closure-->
+    				</div>
+            <!-- FOOTER_CONTENT closure-->
+    			</div>
+          <!-- row closure-->
+		    </footer>
+        <!-- FOOTER closure-->
         <!-- Fermeture container-fluid-->
       </div>
       <!-- Fermeture content-->
